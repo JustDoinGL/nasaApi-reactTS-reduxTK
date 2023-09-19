@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 16px;
+    box-shadow: 0 2px 4px gold;
+    margin-bottom: 15px;
+}
+
+.logo {
+    margin-right: 16px;
+}
+
+.logo img {
+    width: 100px;
+    height: 80px;
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.link {
+    color: silver;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: gold;
+}
+
+.active {
+    color: gold;
+    border-bottom: 2px solid gold;
+}
+

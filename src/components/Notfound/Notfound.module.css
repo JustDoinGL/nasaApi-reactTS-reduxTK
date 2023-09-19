@@ -1,0 +1,18 @@
+.not__found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+}
+
+.header {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.text {
+    font-size: 1.2rem;
+    color: silver;
+}
