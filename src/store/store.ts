@@ -1,14 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { setupListeners } from '@reduxjs/toolkit/dist/query';
+
+import { asteroidsSlice } from './asteroids/asteroidsSlice'
 
 
-export const store = configureStore({
-    reducer: {
-
-    },
-
+const store = configureStore({
+  reducer: {
+    asteroids: asteroidsSlice.reducer
+  },
 })
 
-setupListeners(store.dispatch)
+export default store;
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

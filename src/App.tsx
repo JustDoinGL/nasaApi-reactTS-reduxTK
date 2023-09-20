@@ -3,7 +3,8 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
 import { Layout } from './components/Layout/Layout'
-import NotFound from './components/Notfound/Notfound'
+import NotFound from './pages/Notfoundpage/Notfound'
+import Asteroids from './pages/Asteroids/Asteroids'
 
 import { utils } from './utils'
 
@@ -13,10 +14,11 @@ function App() {
 		<>
 			<Routes>
 				<Route path={`${url}`} element={<Layout />}>
-					{/* <Route index element={<Homepage />} />
+					<Route index element={<Asteroids />} />
+					{/*
           <Route path="about" element={<About />} /> */}
-					<Route path='*' element={<NotFound />} />
 				</Route>
+				<Route path={`*`} element={<NotFound />} />
 			</Routes>
 		</>
 	)
