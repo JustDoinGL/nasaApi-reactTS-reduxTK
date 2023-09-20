@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/nasaApi-reactTS-reduxTK/static/css/main.544612db.css",
-    "main.js": "/nasaApi-reactTS-reduxTK/static/js/main.171bcace.js",
+    "main.css": "/nasaApi-reactTS-reduxTK/static/css/main.a7fb717a.css",
+    "main.js": "/nasaApi-reactTS-reduxTK/static/js/main.2a7d5db7.js",
     "static/js/787.1f4db771.chunk.js": "/nasaApi-reactTS-reduxTK/static/js/787.1f4db771.chunk.js",
     "static/media/NASA_logo.png": "/nasaApi-reactTS-reduxTK/static/media/NASA_logo.e9895fc2d216d92251bb.png",
     "index.html": "/nasaApi-reactTS-reduxTK/index.html",
-    "main.544612db.css.map": "/nasaApi-reactTS-reduxTK/static/css/main.544612db.css.map",
-    "main.171bcace.js.map": "/nasaApi-reactTS-reduxTK/static/js/main.171bcace.js.map",
+    "main.a7fb717a.css.map": "/nasaApi-reactTS-reduxTK/static/css/main.a7fb717a.css.map",
+    "main.2a7d5db7.js.map": "/nasaApi-reactTS-reduxTK/static/js/main.2a7d5db7.js.map",
     "787.1f4db771.chunk.js.map": "/nasaApi-reactTS-reduxTK/static/js/787.1f4db771.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.544612db.css",
-    "static/js/main.171bcace.js"
+    "static/css/main.a7fb717a.css",
+    "static/js/main.2a7d5db7.js"
   ]
 }
