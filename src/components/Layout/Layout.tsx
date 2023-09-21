@@ -11,8 +11,8 @@ const Layout = () => {
 	const { url } = utils
 
 	const data = [
-		{ url: url, name: 'Home' },
-		{ url: '/11', name: '1' }
+		{ url: url, name: 'Asteroids' },
+		{ url: '/11', name: 'NotFound' }
 	]
 
 	return (

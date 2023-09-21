@@ -22,13 +22,13 @@ export const fetchAsteroids = createAsyncThunk<IAsteroids, string>(
 type asteroidsState = {
   asteroids: IAsteroids | {};
   status: 'pending' | 'fulfilled' | 'rejected'
-  arr: [] | IAsteroidsDate[]
+  arrAsteroids: [] | IAsteroidsDate[]
 }
 
 const initialState: asteroidsState = {
   asteroids: {},
   status: 'pending',
-  arr: []
+  arrAsteroids: []
 }
 
 export const asteroidsSlice = createSlice({
@@ -41,7 +41,7 @@ export const asteroidsSlice = createSlice({
         state.status = 'pending';
       })
       .addCase(fetchAsteroids.fulfilled, (state, action) => {
-        state.arr = [...state.arr, ...action.payload.near_earth_objects['2023-09-10']]
+        state.arrAsteroids = [...state.arrAsteroids, ...action.payload.near_earth_objects['2023-09-10']]
         state.status = 'fulfilled';
       })
       .addCase(fetchAsteroids.rejected, (state, action) => {

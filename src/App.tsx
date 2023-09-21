@@ -4,7 +4,7 @@ import './App.css'
 
 import { Layout } from './components/Layout/Layout'
 import NotFound from './pages/Notfoundpage/Notfound'
-import Asteroids from './pages/Asteroids/Asteroids'
+import Asteroids from './pages/Asteroids/AsteroidsPage'
 
 import { utils } from './utils'
 
@@ -15,8 +15,7 @@ function App() {
 			<Routes>
 				<Route path={`${url}`} element={<Layout />}>
 					<Route index element={<Asteroids />} />
-					{/*
-          <Route path="about" element={<About />} /> */}
+					{/*<Route path="about" element={<About />} /> */}
 				</Route>
 				<Route path={`*`} element={<NotFound />} />
 			</Routes>

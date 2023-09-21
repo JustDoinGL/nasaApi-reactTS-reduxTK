@@ -1,0 +1,36 @@
+.loader {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+}
+
+.loader__circle {
+    width: 80px;
+    height: 80px;
+    border: 4px solid #fff;
+    border-top: 4px solid #00ff00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader__text {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 16px;
+}
