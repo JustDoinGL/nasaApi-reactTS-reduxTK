@@ -1,4 +1,4 @@
-Красивый маркдаун:
+[Ссылка на репрезеторий:](https://justdoingl.github.io/nasaApi-reactTS-reduxTK/)
 
 # Руководство по настройке проекта
 
