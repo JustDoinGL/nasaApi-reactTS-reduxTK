@@ -1,10 +1,10 @@
-Красивый маркдаун:
+# [Ссылка на проект](https://justdoingl.github.io/nasaApi-reactTS-reduxTK/)
 
-# Руководство по настройке проекта
+## Руководство по настройке проекта
 
 Приветствую всех!
 
-Для разработки данного приложения были использованы следующие технологии: React, TypeScript, Redux Toolkit, API Nasa с помощью axios, а также react-router-dom и useInViem().
+Для разработки данного приложения были использованы следующие технологии: React, TypeScript, Redux Toolkit, API Nasa с помощью axios, а также react-router-dom и кастомный хук useInViem()
 
 Чтобы начать работу с проектом, выполните следующие шаги:
 

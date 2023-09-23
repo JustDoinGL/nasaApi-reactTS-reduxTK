@@ -1,9 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
 import { utils } from '../../utils'
-
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
+import { Footer, Header } from '../index'
 
 import styles from './Layout.module.css'
 
@@ -21,7 +19,7 @@ const Layout = () => {
 			<main className={styles.main__content}>
 				<Outlet />
 			</main>
-			<Footer />
+			
 		</div>
 	)
 }

@@ -1,0 +1,21 @@
+.default {
+    color: var(--Orange-Base, #F86600);
+    font-family: Helvetica;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1px;
+    border-radius: 16px;
+    background: var(--Orange-Smooth, rgba(248, 102, 0, 0.15));
+    text-transform: uppercase;
+    padding: 2px 11px;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+}
+
+.default:hover {
+    color: var(--White-Base, #FFF);
+    background: var(--Orange-Base, #F86600);
+}

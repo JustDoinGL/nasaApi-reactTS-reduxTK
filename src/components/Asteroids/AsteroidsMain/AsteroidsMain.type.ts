@@ -1,3 +1,3 @@
 export type AsteroidsMainProps = {
-    activeKilometers: boolean,
+	activeKilometers: boolean,
 }

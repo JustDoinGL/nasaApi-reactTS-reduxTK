@@ -6,16 +6,22 @@ import styles from './AsteroidsMain.module.css'
 
 import { AsteroidsMainProps } from './AsteroidsMain.type'
 import { DoubleArrow } from '../../../svg'
-import { Error, Loader } from '../../../UI'
-
-import BigAsteroid from '../../../img/asteroidBig.svg'
-import SmallAsteroid from '../../../img/asteroidSmall.svg'
+import { Button, Error, Loader } from '../../../UI'
+import Dangerous from '../../../img/Dangerous.png'
 
 import { fetchAsteroids } from '../../../store/asteroids/asteroidsSlice'
 
+import getCurrentDate from '../../../actions/getCurrentDate'
+import {
+	getImageSrc,
+	getActiveKilometers,
+	getName,
+	getDiameter,
+	getData
+} from './AsteroidsMain.actions'
+
 const AsteroidsMain = ({ activeKilometers }: AsteroidsMainProps) => {
 	const dispatch = useAppDispatch()
-	// TODO:
 	const [day, setDay] = useState(0)
 	const { ref, inView } = useInView()
 
@@ -23,61 +29,45 @@ const AsteroidsMain = ({ activeKilometers }: AsteroidsMainProps) => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const dayRight = '2023-09-10'
-			await dispatch(fetchAsteroids(dayRight))
+			const date = getCurrentDate(day)
+			await dispatch(fetchAsteroids(date))
 		}
 		if (inView) {
 			fetchData()
+			setDay(el => el + 1)
 		}
 	}, [dispatch, inView])
 
 	return (
 		<div className={styles.main}>
-			{arrAsteroids?.map(el => (
-				<div className={styles.container} key={el.id}>
-					<h3 className={styles.h3}>
-						{el.close_approach_data[0].close_approach_date}
-					</h3>
+			{arrAsteroids?.map(asteroid => (
+				<div className={styles.container} key={asteroid.id}>
+					<h3 className={styles.h3}>{getData(asteroid)}</h3>
 					<div className={styles.container__main}>
 						<div>
 							<p className={styles.container__main_left}>
-								{!activeKilometers
-									? `${
-											el.close_approach_data[0].miss_distance.lunar.split(
-												'.'
-											)[0]
-									  } lunar orbits`
-									: `${el.close_approach_data[0].miss_distance.kilometers
-											.split('.')[0]
-											.split('')
-											.reverse()
-											.join('')
-											.replace(/(\d{3}(?!$))/g, '$1 ')} km`}
+								{getActiveKilometers(activeKilometers, asteroid)}
 							</p>
 							<DoubleArrow />
 						</div>
-						{el.estimated_diameter.meters.estimated_diameter_max > 100 ? (
-							<img className={styles.asteroid} style={{backgroundColor: "transparent"}} src={BigAsteroid} alt='BigAsteroid' />
-						) : (
-							<img className={styles.asteroid} src={SmallAsteroid} alt='SmallAsteroid' />
-						)}
-
+						<img
+							className={styles.asteroid}
+							src={getImageSrc(asteroid)}
+							alt={getImageSrc(asteroid)}
+						/>
 						<div>
-							<h3 className={styles.year}>
-								{el.name
-									.match(/\((.*?)\)/g)
-									?.map((match: string) =>
-										match.substring(1, match.length - 1)
-									)}
-							</h3>
-							<p className={styles.pm}>
-								Ø{' '}
-								{Math.floor(
-									el.estimated_diameter.meters.estimated_diameter_max
-								)}{' '}
-								м
-							</p>
+							<h3 className={styles.year}>{getName(asteroid)}</h3>
+							<p className={styles.pm}>Ø {getDiameter(asteroid)} м</p>
 						</div>
+					</div>
+					<div className={styles.footer}>
+						<Button text='choose' style='default' />
+						{asteroid.is_potentially_hazardous_asteroid ? (
+							<>
+								<img className={styles.img} src={Dangerous} alt='' />{' '}
+								<p className={styles.danger}>Dangerous</p>{' '}
+							</>
+						) : null}
 					</div>
 				</div>
 			))}

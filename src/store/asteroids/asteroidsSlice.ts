@@ -7,12 +7,12 @@ import axios from 'axios';
 
 const { api } = utils
 
-export const fetchAsteroids = createAsyncThunk<IAsteroids, string>(
+export const fetchAsteroids = createAsyncThunk<IAsteroidsDate[], string>(
   'asteroids/fetchAsteroids',
-  async function (date = "2023-09-10", { rejectWithValue }) {
+  async function (date, { rejectWithValue }) {
     try {
-      const response = await axios.get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${date}&end_date=${date}&api_key=${api}`)
-      return response.data
+      const response: IAsteroids = (await axios.get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${date}&end_date=${date}&api_key=${api}`)).data
+      return response.near_earth_objects[`${date}`]
     } catch (error) {
       return rejectWithValue('Server error.');
     }
@@ -41,7 +41,7 @@ export const asteroidsSlice = createSlice({
         state.status = 'pending';
       })
       .addCase(fetchAsteroids.fulfilled, (state, action) => {
-        state.arrAsteroids = [...state.arrAsteroids, ...action.payload.near_earth_objects['2023-09-10']]
+        state.arrAsteroids = [...state.arrAsteroids, ...action.payload]
         state.status = 'fulfilled';
       })
       .addCase(fetchAsteroids.rejected, (state, action) => {

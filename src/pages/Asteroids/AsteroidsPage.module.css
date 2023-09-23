@@ -40,7 +40,26 @@
 }
 
 .main {
+  max-width: 279px;
   margin-left: 66px;
+}
+
+
+
+.heading {
+  color: #F86600;
+  font-family: 'Passion One', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 10px 0;
+}
+
+@media (max-width: 351px) {
+  .heading {
+    font-size: 29px;
+  }
 }
 
 @media (min-width: 650px) {
@@ -50,5 +69,6 @@
 
   .main {
     margin-left: 362px;
+    max-width: 402px;
   }
 }

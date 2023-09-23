@@ -10,7 +10,7 @@ import { HeaderProps } from './Header.type'
 
 const Header = ({ data }: HeaderProps) => {
 	const { url } = utils
-	
+
 	return (
 		<header className={styles.container}>
 			<div className={styles.logo}>

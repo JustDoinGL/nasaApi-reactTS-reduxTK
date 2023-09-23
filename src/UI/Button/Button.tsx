@@ -1,12 +1,13 @@
 import styles from './Button.module.css'
 
-const Loader = () => {
+import { ButtonProps } from './Button.type';
+
+const Button = ({text, style}: ButtonProps) => {
   return (
-    <div className={styles.loader}>
-      <div className={styles.loader__circle}></div>
-      <div className={styles.loader__text}>Load...</div>
-    </div>
+    <button className={`${styles[style]}`}>
+     {text}
+    </button>
   );
 };
 
-export default Loader;
+export default Button;

@@ -1,4 +1,4 @@
-import Header from '../../components/Header/Header'
+import { Header, Footer } from '../../components/index'
 
 import { utils } from '../../utils'
 
@@ -9,18 +9,19 @@ const NotFound = () => {
 
 	const data = [
 		{ url: url, name: 'Asteroids' },
-		{ url: '/11', name: 'NotFound' }
+		{ url: '/', name: 'NotFound' }
 	]
 
 	return (
 		<div className={styles.container}>
 			<Header data={data} />
 			<div className={styles.not__found}>
-				<h1 className={styles.header}>404 - Страница не найдена 😞</h1>
+				<h1 className={styles.header}>404 - Page not found 😞</h1>
 				<p className={styles.text}>
-					Извините, мы не смогли найти запрошенную страницу.
+					Sorry, we were unable to find the requested page.
 				</p>
 			</div>
+			<Footer />
 		</div>
 	)
 }
