@@ -39,5 +39,4 @@ const getDiameter = (el: IAsteroidsDate) => {
     )
 }
 
-
 export { getData, getActiveKilometers, getImageSrc, getName, getDiameter }
