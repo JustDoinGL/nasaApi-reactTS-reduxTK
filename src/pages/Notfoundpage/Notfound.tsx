@@ -8,7 +8,7 @@ const NotFound = () => {
 	const { url } = utils
 
 	const data = [
-		{ url: url, name: 'Asteroids' },
+		{ url: `${url}/asteroids`, name: 'Asteroids' },
 		{ url: '/', name: 'NotFound' }
 	]
 

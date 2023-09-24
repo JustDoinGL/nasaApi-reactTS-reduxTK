@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main__content {
+  flex-grow: 1;
+}
+
+.container__main {
+  position: relative;
+}
+
+.bg {
+  position: fixed;
+  width: 377px;
+  height: 436px;
+  background-image: url("../../../img/MobileBG.png");
+  background-repeat: no-repeat;
+  z-index: -10;
+}
+
+
+@media (min-width: 650px) {
+  .bg {
+    background-image: url("../../../img/DecstopBG.png");
+  }
+}
+
+@media (min-width: 1200px) {
+  .bg {
+    background-image: url("../../../img/BigDeckstop.png");
+    width: 536px;
+    height: 620px;
+  }
+}

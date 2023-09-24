@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
 import { utils } from '../../utils'
-import { Footer, Header } from '../index'
+import { Header } from '../index'
 
 import styles from './Layout.module.css'
 
@@ -9,7 +9,7 @@ const Layout = () => {
 	const { url } = utils
 
 	const data = [
-		{ url: url, name: 'Asteroids' },
+		{ url: `${url}/asteroids`, name: 'Asteroids' },
 		{ url: '/11', name: 'NotFound' }
 	]
 
@@ -19,7 +19,6 @@ const Layout = () => {
 			<main className={styles.main__content}>
 				<Outlet />
 			</main>
-			
 		</div>
 	)
 }

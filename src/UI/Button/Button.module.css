@@ -15,7 +15,34 @@
     cursor: pointer;
 }
 
+.active {
+    background: yellow;
+}
+
 .default:hover {
     color: var(--White-Base, #FFF);
     background: var(--Orange-Base, #F86600);
+}
+
+.aside {
+    height: 48px;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 40px;
+    background: var(--Orange-Base, #F86600);
+    color: var(--White-Base, #FFF);
+    text-transform: uppercase;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.aside:hover {
+    color: var(--Orange-Base, #F86600);
+    background: var(--Orange-Smooth, rgba(248, 102, 0, 0.15));
 }

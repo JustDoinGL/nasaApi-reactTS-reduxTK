@@ -31,7 +31,6 @@ const AsteroidsHeader = ({activeKilometers, setActiveKilometers} : AsteroidsHead
 					in lunar orbits
 				</p>
 			</div>
-			
 		</div>
 	)
 }

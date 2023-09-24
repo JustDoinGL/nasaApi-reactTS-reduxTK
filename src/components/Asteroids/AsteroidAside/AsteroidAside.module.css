@@ -1,0 +1,39 @@
+.container {
+  position: fixed;
+  display: flex;
+  width: 150px;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  row-gap: 32px;
+  flex-wrap: wrap;
+  border-radius: 24px;
+  background: #232526;
+}
+
+@media screen and (max-width: 920px) and (min-width: 650px) {
+  .container {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    display: flex;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 620px) {
+  .container {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    display: flex;
+    width: 100%;
+  }
+
+}

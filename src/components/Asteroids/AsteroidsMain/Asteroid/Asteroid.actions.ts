@@ -1,7 +1,7 @@
-import { IAsteroidsDate } from "../../../interface/asteroids"
+import { IAsteroidsDate } from "../../../../interface/asteroids"
 
-import BigAsteroid from '../../../img/asteroidBig.svg'
-import SmallAsteroid from '../../../img/asteroidSmall.svg'
+import BigAsteroid from '../../../../img/asteroidBig.svg'
+import SmallAsteroid from '../../../../img/asteroidSmall.svg'
 
 const getData = (el: IAsteroidsDate) => {
     const date = new Date(el.close_approach_data[0].close_approach_date);
@@ -23,7 +23,7 @@ const getActiveKilometers = (isActiveKilometers: boolean, el: IAsteroidsDate) =>
 }
 
 const getImageSrc = (el: IAsteroidsDate) => {
-    return el.estimated_diameter.meters.estimated_diameter_max > 100 ? BigAsteroid : SmallAsteroid;
+    return Number(el.estimated_diameter.meters.estimated_diameter_max) > 100 ? BigAsteroid : SmallAsteroid
 }
 
 const getName = (el: IAsteroidsDate) => {

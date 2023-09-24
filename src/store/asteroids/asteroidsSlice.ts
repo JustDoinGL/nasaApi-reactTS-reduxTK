@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { utils } from '../../utils';
 
 import { IAsteroids, IAsteroidsDate } from '../../interface/asteroids';
+
 import axios from 'axios';
 
 const { api } = utils
@@ -20,21 +21,36 @@ export const fetchAsteroids = createAsyncThunk<IAsteroidsDate[], string>(
 );
 
 type asteroidsState = {
-  asteroids: IAsteroids | {};
+  asteroids: IAsteroids | {}
   status: 'pending' | 'fulfilled' | 'rejected'
   arrAsteroids: [] | IAsteroidsDate[]
+  countAsteroids: number
+  activeArrIdAsteroids: IAsteroidsDate[]
 }
 
 const initialState: asteroidsState = {
   asteroids: {},
   status: 'pending',
-  arrAsteroids: []
+  arrAsteroids: [],
+  countAsteroids: 0,
+  activeArrIdAsteroids: []
 }
 
 export const asteroidsSlice = createSlice({
   name: 'asteroids',
   initialState,
-  reducers: {},
+  reducers: {
+    incrementAsteroids: (state, action: PayloadAction<IAsteroidsDate>) => {
+      const asteroidIndex = state.activeArrIdAsteroids.findIndex(el => el.id === action.payload.id);
+      if (asteroidIndex !== -1) {
+        state.countAsteroids--;
+        state.activeArrIdAsteroids.splice(asteroidIndex, 1);
+      } else {
+        state.countAsteroids++;
+        state.activeArrIdAsteroids.push(action.payload);
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAsteroids.pending, (state) => {
@@ -44,8 +60,10 @@ export const asteroidsSlice = createSlice({
         state.arrAsteroids = [...state.arrAsteroids, ...action.payload]
         state.status = 'fulfilled';
       })
-      .addCase(fetchAsteroids.rejected, (state, action) => {
+      .addCase(fetchAsteroids.rejected, (state) => {
         state.status = 'rejected';
       })
   }
 });
+
+export const { incrementAsteroids } = asteroidsSlice.actions

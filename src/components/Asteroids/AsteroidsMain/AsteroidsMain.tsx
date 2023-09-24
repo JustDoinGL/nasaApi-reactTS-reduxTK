@@ -5,20 +5,13 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 import styles from './AsteroidsMain.module.css'
 
 import { AsteroidsMainProps } from './AsteroidsMain.type'
-import { DoubleArrow } from '../../../svg'
-import { Button, Error, Loader } from '../../../UI'
-import Dangerous from '../../../img/Dangerous.png'
+import { Error, Loader } from '../../../UI'
 
 import { fetchAsteroids } from '../../../store/asteroids/asteroidsSlice'
 
 import getCurrentDate from '../../../actions/getCurrentDate'
-import {
-	getImageSrc,
-	getActiveKilometers,
-	getName,
-	getDiameter,
-	getData
-} from './AsteroidsMain.actions'
+
+import Asteroid from './Asteroid/Asteroid'
 
 const AsteroidsMain = ({ activeKilometers }: AsteroidsMainProps) => {
 	const dispatch = useAppDispatch()
@@ -41,35 +34,12 @@ const AsteroidsMain = ({ activeKilometers }: AsteroidsMainProps) => {
 	return (
 		<div className={styles.main}>
 			{arrAsteroids?.map(asteroid => (
-				<div className={styles.container} key={asteroid.id}>
-					<h3 className={styles.h3}>{getData(asteroid)}</h3>
-					<div className={styles.container__main}>
-						<div>
-							<p className={styles.container__main_left}>
-								{getActiveKilometers(activeKilometers, asteroid)}
-							</p>
-							<DoubleArrow />
-						</div>
-						<img
-							className={styles.asteroid}
-							src={getImageSrc(asteroid)}
-							alt={getImageSrc(asteroid)}
-						/>
-						<div>
-							<h3 className={styles.year}>{getName(asteroid)}</h3>
-							<p className={styles.pm}>Ø {getDiameter(asteroid)} м</p>
-						</div>
-					</div>
-					<div className={styles.footer}>
-						<Button text='choose' style='default' />
-						{asteroid.is_potentially_hazardous_asteroid ? (
-							<>
-								<img className={styles.img} src={Dangerous} alt='' />{' '}
-								<p className={styles.danger}>Dangerous</p>{' '}
-							</>
-						) : null}
-					</div>
-				</div>
+				<Asteroid
+					key={asteroid.id}
+					asteroid={asteroid}
+					activeKilometers={activeKilometers}
+					needButton={true}
+				/>
 			))}
 			<div ref={ref}>
 				{status === 'pending' && <Loader />}
