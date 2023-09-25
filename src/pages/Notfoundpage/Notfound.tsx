@@ -1,14 +1,11 @@
 import { Header, Footer } from '../../components/index'
 
-import { utils } from '../../utils'
-
 import styles from './Notfound.module.css'
 
 const NotFound = () => {
-	const { url } = utils
 
 	const data = [
-		{ url: `${url}/asteroids`, name: 'Asteroids' },
+		{ url: `/asteroids`, name: 'Asteroids' },
 		{ url: '/', name: 'NotFound' }
 	]
 

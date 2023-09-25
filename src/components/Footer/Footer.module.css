@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.footer__links {
+.footer__items {
     margin-bottom: 10px;
 }
 
@@ -20,7 +20,7 @@
     transition: opacity 0.3s ease;
 }
 
-.footer__link:hover a {
+.footer__link:hover {
     opacity: 0.7;
     color: gold;
 }

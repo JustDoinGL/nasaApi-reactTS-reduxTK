@@ -3,15 +3,13 @@ import { Button } from '../../../UI'
 import { useAppSelector } from '../../../hooks/redux'
 
 import styles from './AsteroidAside.module.css'
-import { utils } from '../../../utils'
 
 const AsteroidsFooter = () => {
-	const {url} = utils
 	const { countAsteroids } = useAppSelector(state => state.asteroids)
 	const navigate = useNavigate()
 
 	const goDestroy = () => {
-		navigate(`${url}/asteroids/destroy`)
+		navigate(`/asteroids/destroy`)	
 	}
 	if (countAsteroids < 1) {
 		return <></>

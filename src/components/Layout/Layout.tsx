@@ -1,15 +1,13 @@
 import { Outlet } from 'react-router-dom'
 
-import { utils } from '../../utils'
 import { Header } from '../index'
 
 import styles from './Layout.module.css'
 
 const Layout = () => {
-	const { url } = utils
 
 	const data = [
-		{ url: `${url}/asteroids`, name: 'Asteroids' },
+		{ url: `asteroids`, name: 'Asteroids' },
 		{ url: '/11', name: 'NotFound' }
 	]
 

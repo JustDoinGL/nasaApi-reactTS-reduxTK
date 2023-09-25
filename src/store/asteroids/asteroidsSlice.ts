@@ -25,7 +25,8 @@ type asteroidsState = {
   status: 'pending' | 'fulfilled' | 'rejected'
   arrAsteroids: [] | IAsteroidsDate[]
   countAsteroids: number
-  activeArrIdAsteroids: IAsteroidsDate[]
+  activeAsteroids: IAsteroidsDate[]
+  data: number
 }
 
 const initialState: asteroidsState = {
@@ -33,7 +34,8 @@ const initialState: asteroidsState = {
   status: 'pending',
   arrAsteroids: [],
   countAsteroids: 0,
-  activeArrIdAsteroids: []
+  activeAsteroids: [],
+  data: 0
 }
 
 export const asteroidsSlice = createSlice({
@@ -41,14 +43,17 @@ export const asteroidsSlice = createSlice({
   initialState,
   reducers: {
     incrementAsteroids: (state, action: PayloadAction<IAsteroidsDate>) => {
-      const asteroidIndex = state.activeArrIdAsteroids.findIndex(el => el.id === action.payload.id);
+      const asteroidIndex = state.activeAsteroids.findIndex(el => el.id === action.payload.id);
       if (asteroidIndex !== -1) {
         state.countAsteroids--;
-        state.activeArrIdAsteroids.splice(asteroidIndex, 1);
+        state.activeAsteroids.splice(asteroidIndex, 1);
       } else {
         state.countAsteroids++;
-        state.activeArrIdAsteroids.push(action.payload);
+        state.activeAsteroids.push(action.payload);
       }
+    },
+    asteroidsData: (state) => {
+      state.data += 1
     },
   },
   extraReducers: (builder) => {
@@ -66,4 +71,4 @@ export const asteroidsSlice = createSlice({
   }
 });
 
-export const { incrementAsteroids } = asteroidsSlice.actions
+export const { incrementAsteroids, asteroidsData } = asteroidsSlice.actions

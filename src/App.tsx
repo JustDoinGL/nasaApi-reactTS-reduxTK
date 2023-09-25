@@ -10,14 +10,12 @@ import { utils } from './utils'
 import { AsteroidsLayout } from './components/Layout/Asteroids/AsteroidsLayout'
 
 function App() {
-	const { url } = utils
-
 	return (
 		<>
 			<Routes>
-				<Route path={`${url}/asteroids`} element={<AsteroidsLayout />}>
+				<Route path={`/asteroids`} element={<AsteroidsLayout />}>
 					<Route index element={<Asteroids />} />
-					<Route path={`${url}/asteroids/destroy`} element={<DestroyPage />} />
+					<Route path={`/asteroids/destroy`} element={<DestroyPage />} />
 				</Route>
 
 

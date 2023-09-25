@@ -1,33 +1,39 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
-
-import styles from './AsteroidsMain.module.css'
 
 import { AsteroidsMainProps } from './AsteroidsMain.type'
 import { Error, Loader } from '../../../UI'
 
-import { fetchAsteroids } from '../../../store/asteroids/asteroidsSlice'
+import {
+	fetchAsteroids,
+	asteroidsData
+} from '../../../store/asteroids/asteroidsSlice'
 
 import getCurrentDate from '../../../actions/getCurrentDate'
 
 import Asteroid from './Asteroid/Asteroid'
 
+import styles from './AsteroidsMain.module.css'
+
 const AsteroidsMain = ({ activeKilometers }: AsteroidsMainProps) => {
 	const dispatch = useAppDispatch()
-	const [day, setDay] = useState(0)
-	const { ref, inView } = useInView()
+	const { status, arrAsteroids, data } = useAppSelector(
+		state => state.asteroids
+	)
 
-	const { status, arrAsteroids } = useAppSelector(state => state.asteroids)
+	const { ref, inView } = useInView()
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const date = getCurrentDate(day)
+			const date = getCurrentDate(data)
 			await dispatch(fetchAsteroids(date))
 		}
 		if (inView) {
 			fetchData()
-			setDay(el => el + 1)
+			if (status !== 'rejected') {
+				dispatch(asteroidsData())
+			}
 		}
 	}, [dispatch, inView])
 
@@ -41,7 +47,7 @@ const AsteroidsMain = ({ activeKilometers }: AsteroidsMainProps) => {
 					needButton={true}
 				/>
 			))}
-			<div ref={ref}>
+			<div ref={ref} className={styles.helper}>
 				{status === 'pending' && <Loader />}
 				{status === 'rejected' && <Error />}
 			</div>

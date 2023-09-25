@@ -22,7 +22,7 @@ const Asteroid = ({
 	needButton
 }: AsteroidProps) => {
 	return (
-		<div className={styles.container} key={asteroid.id}>
+		<div className={styles.container}>
 			<h3 className={styles.h3}>{getData(asteroid)}</h3>
 			<div className={styles.container__main}>
 				<div>

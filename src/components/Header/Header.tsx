@@ -1,7 +1,5 @@
 import { NavLink } from 'react-router-dom'
 
-import { utils } from '../../utils'
-
 import img from '../../img/NASA_logo.png'
 
 import styles from './Header.module.css'
@@ -9,12 +7,11 @@ import styles from './Header.module.css'
 import { HeaderProps } from './Header.type'
 
 const Header = ({ data }: HeaderProps) => {
-	const { url } = utils
 
 	return (
 		<header className={styles.container}>
 			<div className={styles.logo}>
-				<NavLink to={`${url}`}>
+				<NavLink to={`/`}>
 					<img src={img} alt='Logo Nasa' />
 				</NavLink>
 			</div>
