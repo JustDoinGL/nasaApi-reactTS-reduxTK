@@ -26,8 +26,8 @@ const AsteroidsMain = ({ activeKilometers }: AsteroidsMainProps) => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const date = getCurrentDate(data)
-			await dispatch(fetchAsteroids(date))
+			const getData = getCurrentDate(data)
+			await dispatch(fetchAsteroids(getData))
 		}
 		if (inView) {
 			fetchData()

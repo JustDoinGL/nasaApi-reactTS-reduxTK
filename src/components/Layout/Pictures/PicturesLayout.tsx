@@ -1,14 +1,14 @@
 import { Outlet } from 'react-router-dom'
 
-import { Header } from '../index'
+import { Footer, Header } from '../../index'
 
-import styles from './Layout.module.css'
+import styles from './PicturesLayout.module.css'
 
-const Layout = () => {
+const PicturesLayout = () => {
 
 	const data = [
+		{ url: '/', name: ' Pictures' },
 		{ url: `asteroids`, name: 'Asteroids' },
-		{ url: '/11', name: 'NotFound' }
 	]
 
 	return (
@@ -17,8 +17,9 @@ const Layout = () => {
 			<main className={styles.main__content}>
 				<Outlet />
 			</main>
+			<Footer />
 		</div>
 	)
 }
 
-export { Layout }
+export { PicturesLayout }

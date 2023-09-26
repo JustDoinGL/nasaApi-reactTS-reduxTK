@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container__helper {
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  width: 100%
+}
+
+.big__photo {
+  max-width: 990px;
+}
+
+.small__photo {
+  width: 100px;
+  margin: 5px;
+}

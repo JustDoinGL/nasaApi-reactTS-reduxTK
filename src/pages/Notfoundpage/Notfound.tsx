@@ -5,8 +5,8 @@ import styles from './Notfound.module.css'
 const NotFound = () => {
 
 	const data = [
+		{ url: '/', name: 'Pictures' },
 		{ url: `/asteroids`, name: 'Asteroids' },
-		{ url: '/', name: 'NotFound' }
 	]
 
 	return (
