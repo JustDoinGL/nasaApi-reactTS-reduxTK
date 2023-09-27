@@ -55,6 +55,10 @@ export const asteroidsSlice = createSlice({
     asteroidsData: (state) => {
       state.data += 1
     },
+    deleteAsteroids: (state) => {
+      state.activeAsteroids = []
+      state.countAsteroids = 0
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -71,4 +75,4 @@ export const asteroidsSlice = createSlice({
   }
 });
 
-export const { incrementAsteroids, asteroidsData } = asteroidsSlice.actions
+export const { incrementAsteroids, asteroidsData, deleteAsteroids } = asteroidsSlice.actions

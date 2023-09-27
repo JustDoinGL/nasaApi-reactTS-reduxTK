@@ -14,13 +14,11 @@ import { utils } from './utils'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 const { url } = utils
 root.render(
-	<React.StrictMode>
 		<Provider store={store}>
 			<BrowserRouter basename={`/${url}`}>
 				<App />
 			</BrowserRouter>
 		</Provider>
-	</React.StrictMode>
 )
 
 

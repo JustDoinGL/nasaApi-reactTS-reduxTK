@@ -1,9 +1,14 @@
+.container__head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 .container__helper {
@@ -11,15 +16,12 @@
   justify-content: center;
 }
 
-.img {
-  width: 100%
-}
-
 .big__photo {
   max-width: 990px;
 }
 
-.small__photo {
-  width: 100px;
-  margin: 5px;
+.img {
+  width: 100%;
+  max-height: 500px;
+  cursor: pointer;
 }

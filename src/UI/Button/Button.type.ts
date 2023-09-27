@@ -1,4 +1,4 @@
-import { ActionCreatorWithPayload } from "@reduxjs/toolkit"
+import { ActionCreatorWithPayload, ActionCreatorWithoutPayload } from "@reduxjs/toolkit"
 import { IAsteroidsDate } from "../../interface/asteroids"
 
 export type ButtonStart = {
@@ -17,4 +17,10 @@ type ButtonDestroy = ButtonStart & {
 }
 
 
-export type ButtonProps = ButtonChoose | ButtonDestroy
+type ButtonDelete = ButtonStart & {
+    click: ActionCreatorWithoutPayload<"asteroids/deleteAsteroids">,
+    text: "delete"
+}
+
+
+export type ButtonProps = ButtonChoose | ButtonDestroy | ButtonDelete

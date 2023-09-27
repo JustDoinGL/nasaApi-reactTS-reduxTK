@@ -1,3 +1,5 @@
+import styles from './Style.module.css'
+
 const LeftGallery = () => {
 	return (
 		<svg
@@ -6,11 +8,11 @@ const LeftGallery = () => {
 			height='56'
 			viewBox='0 0 47 56'
 			fill='none'
+			className={styles.arrow}
 		>
 			<g clip-path='url(#clip0_0_742)'>
 				<path
 					d='M27.4167 14L28.4999 14.5L17.4999 28L28.4999 41L27.4167 42L15.6667 28L27.4167 14Z'
-					fill='#696969'
 				/>
 			</g>
 			<defs>

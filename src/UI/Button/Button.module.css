@@ -46,3 +46,10 @@
     color: var(--Orange-Base, #F86600);
     background: var(--Orange-Smooth, rgba(248, 102, 0, 0.15));
 }
+
+@media (max-width: 350px) {
+    .aside {
+        font-size: 12px;
+    }
+    
+}

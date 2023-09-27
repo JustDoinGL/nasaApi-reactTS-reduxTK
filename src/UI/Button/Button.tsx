@@ -16,18 +16,19 @@ const Button = ({ text, style, click, asteroid }: ButtonProps) => {
 			dispatch(click(asteroid))
 		} else if (text === 'destroy') {
 			click()
+		} else if (text === 'delete') {
+			dispatch(click())
 		}
 	}
 
-	const isActive =
-		asteroid && activeAsteroids.some(el => el.id === asteroid.id)
+	const isActive = asteroid && activeAsteroids.some(el => el.id === asteroid.id)
 
 	return (
 		<button
 			className={`${styles[style]} ${isActive ? styles.active : ''}`}
 			onClick={handleClick}
 		>
-			{text === 'destroy' ? 'destroy' : isActive ? text : ' selected'}
+			{text !== 'choose' ? text : isActive ? text : ' selected'}
 		</button>
 	)
 }

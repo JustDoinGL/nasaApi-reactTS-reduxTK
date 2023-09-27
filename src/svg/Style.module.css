@@ -1,0 +1,8 @@
+.arrow {
+  cursor: pointer;
+  fill: #696969;
+}
+
+.arrow:hover {
+  fill: gold;
+}
