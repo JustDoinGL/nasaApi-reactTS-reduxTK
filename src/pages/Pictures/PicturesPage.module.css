@@ -1,7 +1,6 @@
-.container__head {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.main {
+  position: relative;
+  z-index: 1;
 }
 
 .container {
@@ -14,14 +13,4 @@
 .container__helper {
   display: flex;
   justify-content: center;
-}
-
-.big__photo {
-  max-width: 990px;
-}
-
-.img {
-  width: 100%;
-  max-height: 500px;
-  cursor: pointer;
 }

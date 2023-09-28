@@ -36,7 +36,12 @@ export const picturesSlice = createSlice({
       state.picturesArr = state.picturesArr.slice(index)
     },
     changeClick: (state, action: PayloadAction<number>) => {
-      state.picturesArr = state.picturesArr.slice(action.payload)
+      if (action.payload === -1) {
+        const photo = state.picturesArr[state.picturesArr.length - 1]
+        state.picturesArr = [photo, ...(state.picturesArr.slice(0, state.picturesArr.length - 2))]
+      } else {
+        state.picturesArr = state.picturesArr.slice(action.payload)
+      }
     },
   },
   extraReducers: (builder) => {
@@ -45,7 +50,7 @@ export const picturesSlice = createSlice({
         state.status = 'pending'
       })
       .addCase(fetchPictures.fulfilled, (state, action) => {
-        state.picturesArr.push(...action.payload)
+        state.picturesArr = [...state.picturesArr, ...action.payload]
         state.status = 'fulfilled'
       })
       .addCase(fetchPictures.rejected, (state) => {

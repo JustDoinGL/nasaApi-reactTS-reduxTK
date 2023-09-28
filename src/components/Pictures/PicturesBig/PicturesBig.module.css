@@ -1,0 +1,16 @@
+.container__head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.big__photo {
+  max-width: 990px;
+}
+
+.img {
+  width: 100%;
+  max-height: 500px;
+  cursor: pointer;
+}
+
