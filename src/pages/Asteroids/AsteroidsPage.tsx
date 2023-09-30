@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import {
 	AsteroidAside,
 	AsteroidsHeader,
@@ -13,7 +11,7 @@ const AsteroidsPage = () => {
 	return (
 		<div className={styles.container__main}>
 			<div className={styles.main}>
-				<AsteroidsHeader
+				<AsteroidsHeader title='Nearest asteroid approaches'
 				/>
 				<AsteroidsMain />
 			</div>

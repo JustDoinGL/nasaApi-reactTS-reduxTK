@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 
-import { Error, Loader } from '../../../UI'
+import { Error, LoadError, Loader } from '../../../UI'
 
 import {
 	fetchAsteroids,
@@ -17,8 +17,8 @@ import styles from './AsteroidsMain.module.css'
 
 const AsteroidsMain = () => {
 	const dispatch = useAppDispatch()
-	
-	const { status, arrAsteroids, data, activeKilometers } = useAppSelector(
+
+	const { status, arrAsteroids, data } = useAppSelector(
 		state => state.asteroids
 	)
 
@@ -40,15 +40,10 @@ const AsteroidsMain = () => {
 	return (
 		<div className={styles.main}>
 			{arrAsteroids?.map(asteroid => (
-				<Asteroid
-					key={asteroid.id}
-					asteroid={asteroid}
-					needButton={true}
-				/>
+				<Asteroid key={asteroid.id} asteroid={asteroid} needButton={true} />
 			))}
 			<div ref={ref} className={styles.helper}>
-				{status === 'pending' && <Loader />}
-				{status === 'rejected' && <Error />}
+				{status !== 'fulfilled' && <LoadError status={status} />}
 			</div>
 		</div>
 	)

@@ -1,9 +1,12 @@
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 import { isActiveKilometers } from '../../../store/asteroids/asteroidsSlice'
 
+import { AsteroidsHeaderProps } from './AsteroidsHeader.type'
+
+
 import styles from './AsteroidsHeader.module.css'
 
-const AsteroidsHeader = () => {
+const AsteroidsHeader = ({title}: AsteroidsHeaderProps) => {
 	const dispatch = useAppDispatch()
 	const { activeKilometers } = useAppSelector(store => store.asteroids)
 
@@ -13,7 +16,7 @@ const AsteroidsHeader = () => {
 
 	return (
 		<div className={styles.header}>
-			<h1 className={styles.infinity__title}>Nearest asteroid approaches</h1>
+			<h1 className={styles.infinity__title}>{title}</h1>
 			<div className={styles.text__container}>
 				<p
 					className={

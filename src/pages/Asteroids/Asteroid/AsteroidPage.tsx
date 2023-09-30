@@ -16,13 +16,13 @@ const AsteroidPage = () => {
 			dispatch(getAsteroid(id))
 		}
 	}, [id])
-	
+
 	const { asteroid } = useAppSelector(store => store.asteroids)
 	return (
 		<>
-		<AsteroidsHeader />
+			<AsteroidsHeader title=' Information about the astroid' />
 			{asteroid.map(el => (
-				<Asteroid needButton={true} asteroid={el} key={id}/>
+				<Asteroid needButton={true} asteroid={el} key={id} isLink={false} />
 			))}
 		</>
 	)

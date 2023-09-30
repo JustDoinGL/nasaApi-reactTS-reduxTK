@@ -7,7 +7,7 @@ const DestroyPage = () => {
 	const { activeAsteroids } = useAppSelector(store => store.asteroids)
 	return (
 		<>
-			<AsteroidsHeader />
+			<AsteroidsHeader title='Destroyed asteroids' />
 			{activeAsteroids.map(asteroid => (
 				<Asteroid
 					key={asteroid.id}

@@ -8,7 +8,7 @@ const Modal = ({ setIsOpen, picture }: ModalProps) => {
 	}
 
 	return (
-		<div className={styles.modalOverlay} onClick={handleCloseModal}>
+		<div className={styles.modalOverlay}>
 			<div className={styles.modalContent}>
 				<button className={styles.closeButton} onClick={handleCloseModal}>
 					❌

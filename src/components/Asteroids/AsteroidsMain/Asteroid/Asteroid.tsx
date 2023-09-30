@@ -11,15 +11,16 @@ import { Button } from '../../../../UI'
 import styles from './Asteroid.module.css'
 import AsteroidHeader from './AsteroidHeader/AsteroidHeader'
 
-const Asteroid = ({
-	asteroid,
-	needButton,
-}: AsteroidProps) => {
+const Asteroid = ({ asteroid, needButton, isLink=true }: AsteroidProps) => {
 	return (
 		<div className={styles.container}>
-			<Link to={`/asteroids/${asteroid.id}`} className={styles.link}>
+			{isLink ? (
+				<Link to={`/asteroids/${asteroid.id}`} className={styles.link}>
+					<AsteroidHeader key={asteroid.id} asteroid={asteroid} />
+				</Link>
+			) : (
 				<AsteroidHeader key={asteroid.id} asteroid={asteroid} />
-			</Link>
+			)}
 			<div className={styles.footer}>
 				{needButton && (
 					<Button

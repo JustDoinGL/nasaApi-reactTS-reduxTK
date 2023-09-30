@@ -2,5 +2,6 @@ import { IAsteroidsDate } from "../../../../interface/asteroids"
 
 export type AsteroidProps = {
 	asteroid: IAsteroidsDate,
-	needButton: boolean
+	needButton: boolean,
+	isLink? : boolean
 }
