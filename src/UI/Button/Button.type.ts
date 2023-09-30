@@ -2,7 +2,7 @@ import { ActionCreatorWithPayload, ActionCreatorWithoutPayload } from "@reduxjs/
 import { IAsteroidsDate } from "../../interface/asteroids"
 
 export type ButtonStart = {
-    style: "default" | "aside",
+    styleProps: "default" | "aside",
     asteroid?: IAsteroidsDate
 }
 

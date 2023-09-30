@@ -3,57 +3,11 @@
   margin-left: 66px;
 }
 
-.h3 {
-  color: var(--White-Base, #FFF);
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 32px;
+.link:hover {
+  color: gold;
 }
-
-.container__main {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  align-self: stretch;
-}
-
-.container__main_left {
-  color: #FFF;
-  text-align: center;
-  font-family: Helvetica;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
-
 .img {
   padding-left: 8px;
-}
-
-.asteroid {
-  width: 36.667px;
-  height: 40px;
-  flex-shrink: 0;
-}
-
-.year {
-  color: var(--White-Base, #FFF);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  text-decoration-line: underline;
-}
-
-.pm {
-  color: var(--White-Base, #FFF);
-  font-family: Helvetica;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
 }
 
 .footer {
@@ -64,7 +18,6 @@
 }
 
 .danger {
-  color: var(--gray-30, #E3E5E5);
   font-size: 14px;
   font-style: normal;
   font-weight: 600;

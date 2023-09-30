@@ -10,7 +10,7 @@ const RightGallery = () => {
 			viewBox='0 0 47 56'
 			fill='none'
 		>
-			<g clip-path='url(#clip0_0_739)'>
+			<g clipPath='url(#clip0_0_739)'>
 				<path d='M19.5834 14L18.5001 14.5L29.5001 28L18.5001 41L19.5834 42L31.3334 28L19.5834 14Z' />
 			</g>
 			<defs>

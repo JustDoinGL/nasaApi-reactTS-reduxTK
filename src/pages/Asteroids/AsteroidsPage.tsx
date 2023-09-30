@@ -9,16 +9,13 @@ import {
 import styles from './AsteroidsPage.module.css'
 
 const AsteroidsPage = () => {
-	const [activeKilometers, setActiveKilometers] = useState(false)
 
 	return (
 		<div className={styles.container__main}>
 			<div className={styles.main}>
 				<AsteroidsHeader
-					activeKilometers={activeKilometers}
-					setActiveKilometers={setActiveKilometers}
 				/>
-				<AsteroidsMain activeKilometers={activeKilometers} />
+				<AsteroidsMain />
 			</div>
 			<div>
 				<AsteroidAside />

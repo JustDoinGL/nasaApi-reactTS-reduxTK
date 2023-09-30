@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 
-import { AsteroidsMainProps } from './AsteroidsMain.type'
 import { Error, Loader } from '../../../UI'
 
 import {
@@ -16,9 +15,10 @@ import Asteroid from './Asteroid/Asteroid'
 
 import styles from './AsteroidsMain.module.css'
 
-const AsteroidsMain = ({ activeKilometers }: AsteroidsMainProps) => {
+const AsteroidsMain = () => {
 	const dispatch = useAppDispatch()
-	const { status, arrAsteroids, data } = useAppSelector(
+	
+	const { status, arrAsteroids, data, activeKilometers } = useAppSelector(
 		state => state.asteroids
 	)
 
@@ -35,7 +35,7 @@ const AsteroidsMain = ({ activeKilometers }: AsteroidsMainProps) => {
 				dispatch(asteroidsData())
 			}
 		}
-	}, [dispatch, inView])
+	}, [inView, dispatch])
 
 	return (
 		<div className={styles.main}>
@@ -43,7 +43,6 @@ const AsteroidsMain = ({ activeKilometers }: AsteroidsMainProps) => {
 				<Asteroid
 					key={asteroid.id}
 					asteroid={asteroid}
-					activeKilometers={activeKilometers}
 					needButton={true}
 				/>
 			))}

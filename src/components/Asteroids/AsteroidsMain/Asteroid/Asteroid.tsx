@@ -1,51 +1,30 @@
 import { incrementAsteroids } from '../../../../store/asteroids/asteroidsSlice'
-import {
-	getActiveKilometers,
-	getData,
-	getDiameter,
-	getImageSrc,
-	getName
-} from './Asteroid.actions'
+
+import { Link } from 'react-router-dom'
 
 import { AsteroidProps } from './Asteroid.type'
 
-import { DoubleArrow } from '../../../../svg/index'
 import Dangerous from '../../../../img/Dangerous.png'
 
 import { Button } from '../../../../UI'
 
 import styles from './Asteroid.module.css'
+import AsteroidHeader from './AsteroidHeader/AsteroidHeader'
 
 const Asteroid = ({
 	asteroid,
-	activeKilometers = false,
-	needButton
+	needButton,
 }: AsteroidProps) => {
 	return (
 		<div className={styles.container}>
-			<h3 className={styles.h3}>{getData(asteroid)}</h3>
-			<div className={styles.container__main}>
-				<div>
-					<p className={styles.container__main_left}>
-						{getActiveKilometers(activeKilometers, asteroid)}
-					</p>
-					<DoubleArrow />
-				</div>
-				<img
-					className={styles.asteroid}
-					src={getImageSrc(asteroid)}
-					alt={getImageSrc(asteroid)}
-				/>
-				<div>
-					<h3 className={styles.year}>{getName(asteroid)}</h3>
-					<p className={styles.pm}>Ø {getDiameter(asteroid)} м</p>
-				</div>
-			</div>
+			<Link to={`/asteroids/${asteroid.id}`} className={styles.link}>
+				<AsteroidHeader key={asteroid.id} asteroid={asteroid} />
+			</Link>
 			<div className={styles.footer}>
 				{needButton && (
 					<Button
 						text='choose'
-						style='default'
+						styleProps='default'
 						click={incrementAsteroids}
 						asteroid={asteroid}
 					/>

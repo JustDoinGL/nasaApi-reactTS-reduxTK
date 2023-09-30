@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 
-import HeaderAsteroids from '../../Asteroids/Header/HeaderAsteroids'
+import HeaderAsteroids from '../../Asteroids/HeaderAsteroids/HeaderAsteroids'
 
 import styles from './AsteroidsLayout.module.css'
 

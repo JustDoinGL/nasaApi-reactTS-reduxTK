@@ -26,8 +26,8 @@ const AsteroidsFooter = () => {
 					{countAsteroids} {countAsteroids > 1 ? 'asteroids' : 'asteroid'}
 				</p>
 			</div>
-			<Button text='destroy' style='aside' click={goDestroy} />
-			<Button text='delete' style='aside' click={deleteAsteroids} />
+			<Button text='destroy' styleProps='aside' click={goDestroy} />
+			<Button text='delete' styleProps='aside' click={deleteAsteroids} />
 		</div>
 	)
 }

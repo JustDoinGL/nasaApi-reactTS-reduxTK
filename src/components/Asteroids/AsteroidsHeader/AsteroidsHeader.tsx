@@ -1,9 +1,15 @@
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
+import { isActiveKilometers } from '../../../store/asteroids/asteroidsSlice'
+
 import styles from './AsteroidsHeader.module.css'
 
-import { AsteroidsHeaderProps } from './AsteroidsHeader.type'
+const AsteroidsHeader = () => {
+	const dispatch = useAppDispatch()
+	const { activeKilometers } = useAppSelector(store => store.asteroids)
 
-const AsteroidsHeader = ({activeKilometers, setActiveKilometers} : AsteroidsHeaderProps) => {
-    const handleClick = (isKil: boolean) => setActiveKilometers(isKil)
+	const handleClick = () => {
+		dispatch(isActiveKilometers())
+	}
 
 	return (
 		<div className={styles.header}>
@@ -15,7 +21,7 @@ const AsteroidsHeader = ({activeKilometers, setActiveKilometers} : AsteroidsHead
 							? `${styles.text} ${styles.text__active}`
 							: `${styles.text}`
 					}
-					onClick={() => handleClick(true)}
+					onClick={handleClick}
 				>
 					in kilometers
 				</p>
@@ -26,7 +32,7 @@ const AsteroidsHeader = ({activeKilometers, setActiveKilometers} : AsteroidsHead
 							? `${styles.text} ${styles.text__active}`
 							: `${styles.text}`
 					}
-					onClick={() => handleClick(false)}
+					onClick={handleClick}
 				>
 					in lunar orbits
 				</p>

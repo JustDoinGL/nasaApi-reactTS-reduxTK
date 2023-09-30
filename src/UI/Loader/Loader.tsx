@@ -6,7 +6,7 @@ const Loader = () => {
       <div className={styles.loader__circle}></div>
       <div className={styles.loader__text}>Load...</div>
     </div>
-  );
-};
+  )
+}
 
-export default Loader;
+export default Loader

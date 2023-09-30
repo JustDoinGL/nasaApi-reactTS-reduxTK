@@ -10,7 +10,7 @@ const LeftGallery = () => {
 			fill='none'
 			className={styles.arrow}
 		>
-			<g clip-path='url(#clip0_0_742)'>
+			<g clipPath='url(#clip0_0_742)'>
 				<path
 					d='M27.4167 14L28.4999 14.5L17.4999 28L28.4999 41L27.4167 42L15.6667 28L27.4167 14Z'
 				/>
