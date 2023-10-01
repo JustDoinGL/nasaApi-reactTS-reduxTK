@@ -26,28 +26,38 @@
 
 .arrowTop {
   border-radius: 50%;
+  bottom: 90px;
   cursor: pointer;
-  bottom: 10px;
-  left: 20px;
+  left: 2px;
   position: fixed;
   padding: 10px;
   background: #232526;
 }
 
-@media (min-width: 649px) {
+.arrowTopHelper {
+  bottom: 5px;
+}
+
+@media (min-width: 650px) {
   .arrowTop {
-   left: 400px
+  left: 280px;
   }
 }
 
-@media (max-width: 920px) {
+@media (min-width: 1200px) {
   .arrowTop {
-    position: fixed;
-    z-index: 100;
-    bottom: 90px;
-    left: 2px;
+  left: 400px;
   }
-  .arrowTopHelper {
+}
+
+@media (min-width: 619px) and (max-width: 649px) {
+  .arrowTop {
+    bottom: 5px;
+  }
+}
+
+@media (min-width: 921px) {
+  .arrowTop {
     bottom: 5px;
   }
 }
