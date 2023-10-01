@@ -1,3 +1,4 @@
 export type AsteroidsHeaderProps = {
-  title: string
+  title: string,
+  refUseInViewPage?: (node?: Element | null | undefined) => void
 }

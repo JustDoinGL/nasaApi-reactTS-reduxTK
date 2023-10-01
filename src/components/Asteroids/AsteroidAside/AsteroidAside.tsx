@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom'
-import { Button } from '../../../UI'
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
+import { useAppSelector } from '../../../hooks/redux'
 
-import styles from './AsteroidAside.module.css'
 import { deleteAsteroids } from '../../../store/asteroids/asteroidsSlice'
 
-const AsteroidsFooter = () => {
-	const dispatch = useAppDispatch()
+import { Button } from '../../../UI'
+
+import styles from './AsteroidAside.module.css'
+
+const AsteroidAside = () => {
 	const { countAsteroids } = useAppSelector(state => state.asteroids)
 	const navigate = useNavigate()
 
@@ -32,4 +33,4 @@ const AsteroidsFooter = () => {
 	)
 }
 
-export default AsteroidsFooter
+export default AsteroidAside

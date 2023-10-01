@@ -7,9 +7,9 @@ import { AsteroidProps } from './Asteroid.type'
 import Dangerous from '../../../../img/Dangerous.png'
 
 import { Button } from '../../../../UI'
+import AsteroidHeader from './AsteroidHeader/AsteroidHeader'
 
 import styles from './Asteroid.module.css'
-import AsteroidHeader from './AsteroidHeader/AsteroidHeader'
 
 const Asteroid = ({ asteroid, needButton, isLink=true }: AsteroidProps) => {
 	return (

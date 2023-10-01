@@ -3,10 +3,9 @@ import { isActiveKilometers } from '../../../store/asteroids/asteroidsSlice'
 
 import { AsteroidsHeaderProps } from './AsteroidsHeader.type'
 
-
 import styles from './AsteroidsHeader.module.css'
 
-const AsteroidsHeader = ({title}: AsteroidsHeaderProps) => {
+const AsteroidsHeader = ({title, refUseInViewPage}: AsteroidsHeaderProps) => {
 	const dispatch = useAppDispatch()
 	const { activeKilometers } = useAppSelector(store => store.asteroids)
 
@@ -15,7 +14,7 @@ const AsteroidsHeader = ({title}: AsteroidsHeaderProps) => {
 	}
 
 	return (
-		<div className={styles.header}>
+		<div className={styles.header} ref={refUseInViewPage}>
 			<h1 className={styles.infinity__title}>{title}</h1>
 			<div className={styles.text__container}>
 				<p

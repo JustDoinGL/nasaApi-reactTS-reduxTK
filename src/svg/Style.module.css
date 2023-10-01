@@ -6,3 +6,12 @@
 .arrow:hover {
   fill: gold;
 }
+
+.arrowWhite {
+  cursor: pointer;
+  stroke: #fff;
+}
+
+.arrowWhite:hover {
+  stroke: gold;
+}

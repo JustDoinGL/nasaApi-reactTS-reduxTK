@@ -1,3 +1,5 @@
+import { useInView } from 'react-intersection-observer'
+
 import {
 	AsteroidAside,
 	AsteroidsHeader,
@@ -7,13 +9,13 @@ import {
 import styles from './AsteroidsPage.module.css'
 
 const AsteroidsPage = () => {
+	const { ref, inView } = useInView()
 
 	return (
 		<div className={styles.container__main}>
 			<div className={styles.main}>
-				<AsteroidsHeader title='Nearest asteroid approaches'
-				/>
-				<AsteroidsMain />
+				<AsteroidsHeader title='Nearest asteroid approaches' refUseInViewPage={ref} />
+				<AsteroidsMain inViewPage={inView} />
 			</div>
 			<div>
 				<AsteroidAside />
