@@ -1,15 +1,15 @@
 import React from 'react'
 
-import { useDispatch } from 'react-redux'
-import { useAppSelector } from '../../hooks/redux'
-
-import styles from './Button.module.css'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 
 import { ButtonProps } from './Button.type'
 
+import styles from './Button.module.css'
+
 const Button = ({ text, styleProps, click, asteroid }: ButtonProps) => {
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 	const { activeAsteroids } = useAppSelector(state => state.asteroids)
+	const { searchPV, valueInput } = useAppSelector(state => state.searchPictures)
 
 	const handleClick = () => {
 		if (text === 'choose' && asteroid) {
@@ -18,6 +18,9 @@ const Button = ({ text, styleProps, click, asteroid }: ButtonProps) => {
 			click()
 		} else if (text === 'delete') {
 			dispatch(click())
+		} else if (text === 'Search') {
+			const q = searchPV[0]
+			dispatch(click([searchPV[0], valueInput]))
 		}
 	}
 

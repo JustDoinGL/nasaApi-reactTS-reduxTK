@@ -1,0 +1,36 @@
+.dropdown__container {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  border: 2px solid #f2f4f8;
+}
+
+.dropdown__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border-top: none;
+  display: none;
+}
+
+.dropdown__list_item {
+  padding: 10px 15px;
+  border: 1px solid black;
+  color: #000;
+  cursor: pointer;
+}
+
+.dropdown__list_item:hover {
+  background-color: #ddd;
+}

@@ -6,7 +6,7 @@ import {
 	DestroyPage,
 	NotFound,
 	PicturesPage,
-	SearchPictures
+	Search
 } from './pages'
 
 import {
@@ -22,7 +22,7 @@ function App() {
 		<>
 			<Routes>
 				<Route path={`/`} element={<SearchPicturesLayout />}>
-					<Route index element={<SearchPictures />} />
+					<Route index element={<Search />} />
 				</Route>
 
 				<Route path={`/pictures`} element={<PicturesLayout />}>

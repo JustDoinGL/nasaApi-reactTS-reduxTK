@@ -2,13 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import { asteroidsSlice } from './asteroids/asteroidsSlice'
 import { picturesSlice } from './pictures/picturesSlice'
-import { searchPicturesSlice } from './search/searchPicturesSlice'
+import { searchSlice } from './search/searchSlice'
 
 const store = configureStore({
   reducer: {
     asteroids: asteroidsSlice.reducer,
     pictures: picturesSlice.reducer,
-    searchPictures: searchPicturesSlice.reducer,
+    searchPictures: searchSlice.reducer,
   },
 })
 

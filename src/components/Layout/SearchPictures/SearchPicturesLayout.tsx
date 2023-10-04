@@ -9,7 +9,7 @@ const SearchPicturesLayout = () => {
 	const data = [
 		{ url: '/', name: 'Search' },
 		{ url: '/pictures', name: 'Pictures' },
-		{ url: `asteroids`, name: 'Asteroids' },
+		{ url: `/asteroids`, name: 'Asteroids' },
 	]
 
 	return (

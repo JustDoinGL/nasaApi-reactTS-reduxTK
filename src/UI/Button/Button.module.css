@@ -53,3 +53,19 @@
     }
     
 }
+
+.search {
+  display: flex;
+  cursor: pointer;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background: var(--Black, #fff);
+  color: #000;
+  font-family: Apercu Pro;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+}
