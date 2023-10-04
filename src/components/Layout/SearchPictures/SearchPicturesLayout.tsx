@@ -2,13 +2,14 @@ import { Outlet } from 'react-router-dom'
 
 import { Footer, Header } from '../../index'
 
-import styles from './PicturesLayout.module.css'
+import styles from './SearchPicturesLayout.module.css'
 
-const PicturesLayout = () => {
+const SearchPicturesLayout = () => {
+
 	const data = [
 		{ url: '/', name: 'Search' },
 		{ url: '/pictures', name: 'Pictures' },
-		{ url: `asteroids`, name: 'Asteroids' }
+		{ url: `asteroids`, name: 'Asteroids' },
 	]
 
 	return (
@@ -22,4 +23,4 @@ const PicturesLayout = () => {
 	)
 }
 
-export { PicturesLayout }
+export { SearchPicturesLayout }

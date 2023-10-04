@@ -1,13 +1,19 @@
 import { Routes, Route } from 'react-router-dom'
 
-import NotFound from './pages/Notfoundpage/Notfound'
-import AsteroidsPage from './pages/Asteroids/AsteroidsPage'
-import PicturesPage from './pages/Pictures/PicturesPage'
-import DestroyPage from './pages/Asteroids/Destroy/DestroyPage'
-import { AsteroidPage } from './pages/Asteroids/Asteroid/AsteroidPage'
+import {
+	AsteroidPage,
+	AsteroidsPage,
+	DestroyPage,
+	NotFound,
+	PicturesPage,
+	SearchPictures
+} from './pages'
 
-import { AsteroidsLayout } from './components/Layout/Asteroids/AsteroidsLayout'
-import { PicturesLayout } from './components/Layout/Pictures/PicturesLayout'
+import {
+	AsteroidsLayout,
+	PicturesLayout,
+	SearchPicturesLayout
+} from './components/Layout'
 
 import './App.css'
 
@@ -15,7 +21,11 @@ function App() {
 	return (
 		<>
 			<Routes>
-				<Route path={`/`} element={<PicturesLayout />}>
+				<Route path={`/`} element={<SearchPicturesLayout />}>
+					<Route index element={<SearchPictures />} />
+				</Route>
+
+				<Route path={`/pictures`} element={<PicturesLayout />}>
 					<Route index element={<PicturesPage />} />
 				</Route>
 

@@ -24,4 +24,4 @@ const AsteroidsPage = () => {
 	)
 }
 
-export default AsteroidsPage
+export {AsteroidsPage}

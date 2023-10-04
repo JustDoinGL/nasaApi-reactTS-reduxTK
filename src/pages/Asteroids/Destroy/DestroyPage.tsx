@@ -14,16 +14,12 @@ const DestroyPage = () => {
 
 	return (
 		<>
-			<AsteroidsHeader title='Destroyed asteroids' refUseInViewPage={ref}/>
+			<AsteroidsHeader title='Destroyed asteroids' refUseInViewPage={ref} />
 			{activeAsteroids.map(asteroid => (
-				<Asteroid
-					key={asteroid.id}
-					asteroid={asteroid}
-					needButton={true}
-				/>
+				<Asteroid key={asteroid.id} asteroid={asteroid} needButton={true} />
 			))}
 			{!inView && (
-				<div className={`${styles.arrowTop} ${styles.arrowTopHelper}` }>
+				<div className={`${styles.arrowTop} ${styles.arrowTopHelper}`}>
 					<BtnUpArrow />
 				</div>
 			)}
@@ -31,4 +27,4 @@ const DestroyPage = () => {
 	)
 }
 
-export default DestroyPage
+export { DestroyPage }

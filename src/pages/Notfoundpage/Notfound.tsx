@@ -5,8 +5,9 @@ import styles from './Notfound.module.css'
 const NotFound = () => {
 
 	const data = [
-		{ url: '/', name: 'Pictures' },
-		{ url: `/asteroids`, name: 'Asteroids' },
+		{ url: '/', name: 'Search' },
+		{ url: '/pictures', name: 'Pictures' },
+		{ url: `asteroids`, name: 'Asteroids' },
 	]
 
 	return (
@@ -23,4 +24,4 @@ const NotFound = () => {
 	)
 }
 
-export default NotFound
+export {NotFound}
