@@ -14,7 +14,10 @@ const AsteroidsPage = () => {
 	return (
 		<div className={styles.container__main}>
 			<div className={styles.main}>
-				<AsteroidsHeader title='Nearest asteroid approaches' refUseInViewPage={ref} />
+				<AsteroidsHeader
+					title='Nearest asteroid approaches'
+					refUseInViewPage={ref}
+				/>
 				<AsteroidsMain inViewPage={inView} />
 			</div>
 			<div>
@@ -24,4 +27,4 @@ const AsteroidsPage = () => {
 	)
 }
 
-export {AsteroidsPage}
+export { AsteroidsPage }

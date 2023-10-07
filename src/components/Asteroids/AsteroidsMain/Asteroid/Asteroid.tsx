@@ -11,16 +11,27 @@ import AsteroidHeader from './AsteroidHeader/AsteroidHeader'
 
 import styles from './Asteroid.module.css'
 
-const Asteroid = ({ asteroid, needButton, isLink=true }: AsteroidProps) => {
+const Asteroid = ({ asteroid, needButton, isLink = true }: AsteroidProps) => {
+	const renderAsteroidHeader = () => (
+		<AsteroidHeader key={asteroid.id} asteroid={asteroid} />
+	)
+
+	const renderLink = () => (
+		<Link to={`/asteroids/${asteroid.id}`} className={styles.link}>
+			{renderAsteroidHeader()}
+		</Link>
+	)
+
+	const renderDangerousInfo = () => (
+		<>
+			<img className={styles.img} src={Dangerous} alt='Dangerous' />
+			<p className={styles.danger}>Dangerous</p>
+		</>
+	)
+
 	return (
 		<div className={styles.container}>
-			{isLink ? (
-				<Link to={`/asteroids/${asteroid.id}`} className={styles.link}>
-					<AsteroidHeader key={asteroid.id} asteroid={asteroid} />
-				</Link>
-			) : (
-				<AsteroidHeader key={asteroid.id} asteroid={asteroid} />
-			)}
+			{isLink ? renderLink() : renderAsteroidHeader()}
 			<div className={styles.footer}>
 				{needButton && (
 					<Button
@@ -30,12 +41,7 @@ const Asteroid = ({ asteroid, needButton, isLink=true }: AsteroidProps) => {
 						asteroid={asteroid}
 					/>
 				)}
-				{asteroid.is_potentially_hazardous_asteroid ? (
-					<>
-						<img className={styles.img} src={Dangerous} alt='Dangerous' />
-						<p className={styles.danger}>Dangerous</p>
-					</>
-				) : null}
+				{asteroid.is_potentially_hazardous_asteroid && renderDangerousInfo()}
 			</div>
 		</div>
 	)

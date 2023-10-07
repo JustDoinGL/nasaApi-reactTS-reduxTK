@@ -1,4 +1,3 @@
-import Iframe from '../../../UI/Iframe/Iframe'
 import { useAppDispatch } from '../../../hooks/redux'
 
 import {
@@ -9,6 +8,8 @@ import {
 import { PicturesBigProps } from './PicturesBig.type'
 
 import { LeftGallery, RightGallery } from '../../../svg'
+
+import Iframe from '../../../UI/Iframe/Iframe'
 
 import styles from './PicturesBig.module.css'
 
@@ -26,24 +27,26 @@ const PicturesBig = ({ picture, setIsOpen }: PicturesBigProps) => {
 		setIsOpen(true)
 	}
 
+	const renderMedia = () => {
+		if (media_type === 'video') {
+			return <Iframe url={url} />
+		} else {
+			return <img className={styles.img} src={url} alt={title} />
+		}
+	}
+
 	return (
-		<>
-			<div className={styles.container__head}>
-				<div className={styles.side__svg} onClick={() => handleClickArrow(-1)}>
-					<LeftGallery />
-				</div>
-				<div className={styles.big__photo} onClick={handleClickPicture}>
-					{media_type === 'video' ? (
-						<Iframe url={url} />
-					) : (
-						<img className={styles.img} src={url} alt={title} />
-					)}
-				</div>
-				<div className={styles.side__svg} onClick={() => handleClickArrow(1)}>
-					<RightGallery />
-				</div>
+		<div className={styles.container__head}>
+			<div className={styles.side__svg} onClick={() => handleClickArrow(-1)}>
+				<LeftGallery />
 			</div>
-		</>
+			<div className={styles.big__photo} onClick={handleClickPicture}>
+				{renderMedia()}
+			</div>
+			<div className={styles.side__svg} onClick={() => handleClickArrow(1)}>
+				<RightGallery />
+			</div>
+		</div>
 	)
 }
 

@@ -1,35 +1,35 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-
 import axios from 'axios'
-
 import { ISearchPictures, ISearch } from '../../interface/searchPictures'
 
 export const fetchSearch = createAsyncThunk<ISearch, string[]>(
   'search/fetchSearch',
   async function (search, { rejectWithValue }) {
     try {
-      const response = (await axios.get(`https://images-api.nasa.gov/search?media_type=${"Image".toLowerCase()}&q=${search[1]}`)).data
-      return response
+      const response = await axios.get(`https://images-api.nasa.gov/search?media_type=${"Image".toLowerCase()}&q=${search[1]}`)
+      return response.data
     } catch (error) {
       return rejectWithValue('Server error.')
     }
   }
 )
 
-type searchState = {
+type SearchState = {
   status: 'pending' | 'fulfilled' | 'rejected'
   valueInput: string
-  items:  ISearchPictures[]
+  items: ISearchPictures[]
   searchPV: string[]
   valueInputLast: string
+  isLoad: boolean
 }
 
-const initialState: searchState = {
+const initialState: SearchState = {
   status: 'fulfilled',
   valueInput: '',
   valueInputLast: '',
   items: [],
-  searchPV: ["Image", "Video"]
+  searchPV: ['Image', 'Video'],
+  isLoad: false,
 }
 
 export const searchSlice = createSlice({
@@ -40,9 +40,9 @@ export const searchSlice = createSlice({
       state.valueInput = action.payload
     },
     changeSearch: (state, action: PayloadAction<number>) => {
-      const [first, second] = [state.searchPV[0], state.searchPV[action.payload]];
-      state.searchPV[0] = second;
-      state.searchPV[action.payload] = first;
+      const [first, second] = [state.searchPV[0], state.searchPV[action.payload]]
+      state.searchPV[0] = second
+      state.searchPV[action.payload] = first
     },
   },
   extraReducers: (builder) => {
@@ -57,6 +57,7 @@ export const searchSlice = createSlice({
           state.valueInput = ''
         }
         state.status = 'fulfilled'
+        state.isLoad = true
       })
       .addCase(fetchSearch.rejected, (state) => {
         state.status = 'rejected'
@@ -65,4 +66,3 @@ export const searchSlice = createSlice({
 })
 
 export const { changeInput, changeSearch } = searchSlice.actions
-

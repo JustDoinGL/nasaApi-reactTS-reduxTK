@@ -1,5 +1,5 @@
 import { AsteroidsLayout } from './Asteroids/AsteroidsLayout'
 import { PicturesLayout } from './Pictures/PicturesLayout'
-import { SearchPicturesLayout } from './SearchPictures/SearchPicturesLayout'
+import { SearchLayout } from './Search/SearchLayout'
 
-export { PicturesLayout, AsteroidsLayout, SearchPicturesLayout }
+export { PicturesLayout, AsteroidsLayout, SearchLayout }

@@ -1,7 +1,19 @@
 import { SetStateAction, Dispatch } from "react"
 import { IPictures } from "../../interface/pictures"
+import { Daum, Link } from "../../interface/searchPictures"
 
-export type ModalProps = {
+type StartModalProps = {
   setIsOpen: Dispatch<SetStateAction<boolean>>
-  picture: IPictures
 }
+
+type IPicturesModalProps = StartModalProps & {
+  picture: IPictures
+  item?: []
+}
+
+type LinkModalProps = StartModalProps & {
+  picture: Link
+  item: Daum[]
+}
+
+export type ModalProps = IPicturesModalProps | LinkModalProps

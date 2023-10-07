@@ -16,7 +16,7 @@ const AsteroidAside = () => {
 	}
 
 	if (countAsteroids < 1) {
-		return <></>
+		return null
 	}
 
 	return (

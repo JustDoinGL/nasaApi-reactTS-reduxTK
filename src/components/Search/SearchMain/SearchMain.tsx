@@ -5,19 +5,24 @@ import SearchMainImg from './SearchMainImg/SearchMainImg'
 import styles from './SearchMain.module.css'
 
 const SearchMain = ({ item }: SearchMainProps) => {
-	
-	let description = item.data[0].title
-	let media_type = item.data[0].media_type
+	const { title, media_type } = item.data[0]
 
-	return media_type === 'image' ? (
-		<div className={styles.container}>
-			{item.links.map(el => (
-				<SearchMainImg el={el} key={el.href} description={description} />
-			))}
-		</div>
-	) : (
-		<></>
-	)
+	if (media_type === 'image') {
+		return (
+			<div className={styles.container}>
+				{item.links.map(el => (
+					<SearchMainImg
+						el={el}
+						key={el.href}
+						description={title}
+						item={item.data}
+					/>
+				))}
+			</div>
+		)
+	} else {
+		return null
+	}
 }
 
 export { SearchMain }

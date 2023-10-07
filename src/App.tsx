@@ -12,7 +12,7 @@ import {
 import {
 	AsteroidsLayout,
 	PicturesLayout,
-	SearchPicturesLayout
+	SearchLayout
 } from './components/Layout'
 
 import './App.css'
@@ -21,7 +21,7 @@ function App() {
 	return (
 		<>
 			<Routes>
-				<Route path={`/`} element={<SearchPicturesLayout />}>
+				<Route path={`/`} element={<SearchLayout />}>
 					<Route index element={<Search />} />
 				</Route>
 

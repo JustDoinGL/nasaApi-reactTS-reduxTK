@@ -1,11 +1,16 @@
 import { ModalProps } from './Modal.type'
 
+import getInfo from './Modal.actions'
+
 import styles from './Modal.module.css'
 
-const Modal = ({ setIsOpen, picture }: ModalProps) => {
+const Modal = ({ setIsOpen, picture, item = []}: ModalProps) => {
 	const handleCloseModal = () => {
 		setIsOpen(false)
 	}
+
+	const info = getInfo(picture, item)
+	const { title, explanation, url } = info
 
 	return (
 		<div className={styles.modalOverlay}>
@@ -13,9 +18,9 @@ const Modal = ({ setIsOpen, picture }: ModalProps) => {
 				<button className={styles.closeButton} onClick={handleCloseModal}>
 					❌
 				</button>
-				<h1 className={styles.title}>{picture.title}</h1>
-				<p className={styles.text}>{picture.explanation}</p>
-				<img className={styles.img} src={picture.url} alt={picture.title} />
+				<h1 className={styles.title}>{title}</h1>
+				<p className={styles.text}>{explanation}</p>
+				<img className={styles.img} src={url} alt={title} />
 			</div>
 		</div>
 	)

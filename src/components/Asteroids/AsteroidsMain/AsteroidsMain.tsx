@@ -1,17 +1,18 @@
 import { useEffect } from 'react'
-import { useInView } from 'react-intersection-observer'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
+import { useInView } from 'react-intersection-observer'
 
-import { BtnUpArrow, LoadError } from '../../../UI'
+import getCurrentDate from '../../../actions/getCurrentDate'
+
+import { AsteroidsMainProps } from './AsteroidsMain.type'
 
 import {
 	fetchAsteroids,
 	asteroidsData
 } from '../../../store/asteroids/asteroidsSlice'
 
-import getCurrentDate from '../../../actions/getCurrentDate'
+import { BtnUpArrow, LoadError } from '../../../UI'
 import Asteroid from './Asteroid/Asteroid'
-import { AsteroidsMainProps } from './AsteroidsMain.type'
 
 import styles from './AsteroidsMain.module.css'
 
@@ -37,16 +38,27 @@ const AsteroidsMain = ({ inViewPage }: AsteroidsMainProps) => {
 		}
 	}, [inView, dispatch])
 
+	const renderAsteroids = () =>
+		arrAsteroids?.map(asteroid => (
+			<Asteroid key={asteroid.id} asteroid={asteroid} needButton={true} />
+		))
+
+	const renderArrowTop = () => (
+		<div
+			className={
+				countAsteroids > 0
+					? styles.arrowTop
+					: `${styles.arrowTop} ${styles.arrowTopHelper}`
+			}
+		>
+			<BtnUpArrow />
+		</div>
+	)
+
 	return (
 		<div className={styles.main}>
-			{arrAsteroids?.map(asteroid => (
-				<Asteroid key={asteroid.id} asteroid={asteroid} needButton={true} />
-			))}
-			{!inViewPage && (
-				<div className={countAsteroids > 0 ? styles.arrowTop : `${styles.arrowTop} ${styles.arrowTopHelper}` }>
-					<BtnUpArrow />
-				</div>
-			)}
+			{renderAsteroids()}
+			{!inViewPage && renderArrowTop()}
 			<div ref={ref} className={styles.helper}>
 				{status !== 'fulfilled' && <LoadError status={status} />}
 			</div>

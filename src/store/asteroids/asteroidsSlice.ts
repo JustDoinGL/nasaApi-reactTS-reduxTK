@@ -1,9 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-
 import axios from 'axios'
-
 import { utils } from '../../utils'
-
 import { IAsteroids, IAsteroidsDate } from '../../interface/asteroids'
 
 const { api } = utils
@@ -18,32 +15,32 @@ export const fetchAsteroids = createAsyncThunk<IAsteroidsDate[], string>(
   'asteroids/fetchAsteroids',
   async function (date, { rejectWithValue }) {
     try {
-      const response: IAsteroids = (await axios.get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${date}&end_date=${date}&api_key=${api}`)).data
-      return response.near_earth_objects[`${date}`]
+      const response = await axios.get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${date}&end_date=${date}&api_key=${api}`)
+      return response.data.near_earth_objects[date]
     } catch (error) {
       return rejectWithValue('Server error.')
     }
   }
 )
 
-type asteroidsState = {
+type AsteroidsState = {
   asteroid: IAsteroidsDate[]
   status: 'pending' | 'fulfilled' | 'rejected'
-  arrAsteroids: [] | IAsteroidsDate[]
+  arrAsteroids: IAsteroidsDate[]
   countAsteroids: number
   activeAsteroids: IAsteroidsDate[]
   data: number
   activeKilometers: boolean
 }
 
-const initialState: asteroidsState = {
+const initialState: AsteroidsState = {
   asteroid: getAsteroidFromLocalStorage(),
   status: 'pending',
   arrAsteroids: [],
   countAsteroids: 0,
   activeAsteroids: [],
   data: 0,
-  activeKilometers: false
+  activeKilometers: false,
 }
 
 export const asteroidsSlice = createSlice({
@@ -51,7 +48,7 @@ export const asteroidsSlice = createSlice({
   initialState,
   reducers: {
     incrementAsteroids: (state, action: PayloadAction<IAsteroidsDate>) => {
-      const asteroidIndex = state.activeAsteroids.findIndex(el => el.id === action.payload.id)
+      const asteroidIndex = state.activeAsteroids.findIndex((el) => el.id === action.payload.id)
       if (asteroidIndex !== -1) {
         state.countAsteroids--
         state.activeAsteroids.splice(asteroidIndex, 1)
@@ -68,7 +65,7 @@ export const asteroidsSlice = createSlice({
       state.countAsteroids = 0
     },
     getAsteroid: (state, action: PayloadAction<string>) => {
-      const asteroid = state.arrAsteroids?.filter(el => el.id === action.payload)
+      const asteroid = state.arrAsteroids.filter((el) => el.id === action.payload)
       if (asteroid.length) {
         state.asteroid = asteroid
         localStorage.setItem(ASTEROID_ID_KEY, JSON.stringify(asteroid))
@@ -76,7 +73,7 @@ export const asteroidsSlice = createSlice({
     },
     isActiveKilometers: (state) => {
       state.activeKilometers = !state.activeKilometers
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -90,7 +87,7 @@ export const asteroidsSlice = createSlice({
       .addCase(fetchAsteroids.rejected, (state) => {
         state.status = 'rejected'
       })
-  }
+  },
 })
 
 export const { incrementAsteroids, asteroidsData, deleteAsteroids, getAsteroid, isActiveKilometers } = asteroidsSlice.actions

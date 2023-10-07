@@ -1,9 +1,12 @@
-import { PicturesSmallProps } from './PictureSmall.type'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
+
 import { changeImg, fetchPictures } from '../../../store/pictures/picturesSlice'
 
-import styles from './PictureSmall.module.css'
+import { PicturesSmallProps } from './PictureSmall.type'
+
 import Iframe from '../../../UI/Iframe/Iframe'
+
+import styles from './PictureSmall.module.css'
 
 const PictureSmall = ({ picture }: PicturesSmallProps) => {
 	const dispatch = useAppDispatch()
@@ -15,13 +18,19 @@ const PictureSmall = ({ picture }: PicturesSmallProps) => {
 		dispatch(fetchPictures(index))
 	}
 
+	const renderMedia = () => {
+		if (picture.media_type === 'video') {
+			return <Iframe url={picture.url} />
+		} else {
+			return (
+				<img className={styles.img} src={picture.url} alt={picture.title} />
+			)
+		}
+	}
+
 	return (
 		<div className={styles.small__photo} onClick={clickHandler}>
-			{picture.media_type === 'video' ? (
-				<Iframe url={picture.url} />
-			) : (
-				<img className={styles.img} src={picture.url} alt={picture.title} />
-			)}
+			{renderMedia()}
 		</div>
 	)
 }

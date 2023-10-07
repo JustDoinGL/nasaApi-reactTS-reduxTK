@@ -2,9 +2,9 @@ import { Outlet } from 'react-router-dom'
 
 import { Footer, Header } from '../../index'
 
-import styles from './SearchPicturesLayout.module.css'
+import styles from './SearchLayout.module.css'
 
-const SearchPicturesLayout = () => {
+const SearchLayout = () => {
 
 	const data = [
 		{ url: '/', name: 'Search' },
@@ -23,4 +23,4 @@ const SearchPicturesLayout = () => {
 	)
 }
 
-export { SearchPicturesLayout }
+export { SearchLayout }

@@ -4,8 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 
 import { getAsteroid } from '../../../store/asteroids/asteroidsSlice'
 
-import Asteroid from '../../../components/Asteroids/AsteroidsMain/Asteroid/Asteroid'
-import { AsteroidsHeader } from '../../../components/Asteroids'
+import { Asteroid, AsteroidsHeader } from '../../../components/Asteroids'
 
 const AsteroidPage = () => {
 	const { id } = useParams()
@@ -20,7 +19,7 @@ const AsteroidPage = () => {
 	const { asteroid } = useAppSelector(store => store.asteroids)
 	return (
 		<>
-			<AsteroidsHeader title=' Information about the astroid' />
+			<AsteroidsHeader title='Information about the astroid' />
 			{asteroid.map(el => (
 				<Asteroid needButton={true} asteroid={el} key={id} isLink={false} />
 			))}
