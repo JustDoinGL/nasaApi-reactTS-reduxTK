@@ -4,7 +4,7 @@ import { changeImg, fetchPictures } from '../../../store/pictures/picturesSlice'
 
 import { PicturesSmallProps } from './PictureSmall.type'
 
-import Iframe from '../../../UI/Iframe/Iframe'
+import { RenderMedia } from '../../../UI'
 
 import styles from './PictureSmall.module.css'
 
@@ -18,19 +18,9 @@ const PictureSmall = ({ picture }: PicturesSmallProps) => {
 		dispatch(fetchPictures(index))
 	}
 
-	const renderMedia = () => {
-		if (picture.media_type === 'video') {
-			return <Iframe url={picture.url} />
-		} else {
-			return (
-				<img className={styles.img} src={picture.url} alt={picture.title} />
-			)
-		}
-	}
-
 	return (
 		<div className={styles.small__photo} onClick={clickHandler}>
-			{renderMedia()}
+			<RenderMedia picture={picture} />
 		</div>
 	)
 }

@@ -9,14 +9,13 @@ import { PicturesBigProps } from './PicturesBig.type'
 
 import { LeftGallery, RightGallery } from '../../../svg'
 
-import Iframe from '../../../UI/Iframe/Iframe'
+import { RenderMedia } from '../../../UI'
 
 import styles from './PicturesBig.module.css'
 
+
 const PicturesBig = ({ picture, setIsOpen }: PicturesBigProps) => {
 	const dispatch = useAppDispatch()
-
-	const { url, title, media_type } = picture || {}
 
 	const handleClickArrow = (index: number) => {
 		dispatch(fetchPictures(1))
@@ -27,21 +26,13 @@ const PicturesBig = ({ picture, setIsOpen }: PicturesBigProps) => {
 		setIsOpen(true)
 	}
 
-	const renderMedia = () => {
-		if (media_type === 'video') {
-			return <Iframe url={url} />
-		} else {
-			return <img className={styles.img} src={url} alt={title} />
-		}
-	}
-
 	return (
 		<div className={styles.container__head}>
 			<div className={styles.side__svg} onClick={() => handleClickArrow(-1)}>
 				<LeftGallery />
 			</div>
 			<div className={styles.big__photo} onClick={handleClickPicture}>
-				{renderMedia()}
+				<RenderMedia picture={picture} />
 			</div>
 			<div className={styles.side__svg} onClick={() => handleClickArrow(1)}>
 				<RightGallery />
