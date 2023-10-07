@@ -1,6 +1,6 @@
 import { ActionCreatorWithPayload, ActionCreatorWithoutPayload, AsyncThunk } from "@reduxjs/toolkit"
 import { IAsteroidsDate } from "../../interface/asteroids"
-import { ISearchPicturesFull } from "../../interface/searchPictures"
+import { ISearch } from "../../interface/searchPictures"
 
 export type ButtonStart = {
     styleProps: "default" | "aside" | "search",
@@ -24,7 +24,7 @@ type ButtonDelete = ButtonStart & {
 }
 
 type ButtonSearch = ButtonStart & {
-    click: AsyncThunk<ISearchPicturesFull, string[], any>,
+    click: AsyncThunk<ISearch, string[], any>,
     text: "Search"
 }
 

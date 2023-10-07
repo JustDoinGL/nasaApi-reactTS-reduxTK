@@ -2,13 +2,13 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 
 import axios from 'axios'
 
-import { ISearchPictures, ISearchPicturesFull } from '../../interface/searchPictures'
+import { ISearchPictures, ISearch } from '../../interface/searchPictures'
 
-export const fetchSearch = createAsyncThunk<ISearchPicturesFull, string[]>(
+export const fetchSearch = createAsyncThunk<ISearch, string[]>(
   'search/fetchSearch',
   async function (search, { rejectWithValue }) {
     try {
-      const response = (await axios.get(`https://images-api.nasa.gov/search?media_type=image&q=${search[1]}`)).data
+      const response = (await axios.get(`https://images-api.nasa.gov/search?media_type=${"Image".toLowerCase()}&q=${search[1]}`)).data
       return response
     } catch (error) {
       return rejectWithValue('Server error.')
@@ -19,15 +19,17 @@ export const fetchSearch = createAsyncThunk<ISearchPicturesFull, string[]>(
 type searchState = {
   status: 'pending' | 'fulfilled' | 'rejected'
   valueInput: string
-  picture: ISearchPictures[]
+  items:  ISearchPictures[]
   searchPV: string[]
+  valueInputLast: string
 }
 
 const initialState: searchState = {
   status: 'fulfilled',
   valueInput: '',
-  picture: [],
-  searchPV: ["Picture", "Video"]
+  valueInputLast: '',
+  items: [],
+  searchPV: ["Image", "Video"]
 }
 
 export const searchSlice = createSlice({
@@ -49,7 +51,11 @@ export const searchSlice = createSlice({
         state.status = 'pending'
       })
       .addCase(fetchSearch.fulfilled, (state, action) => {
-        state.picture = action.payload.collection.items
+        state.items = action.payload.collection.items
+        state.valueInputLast = state.valueInput
+        if (state.items.length > 0) {
+          state.valueInput = ''
+        }
         state.status = 'fulfilled'
       })
       .addCase(fetchSearch.rejected, (state) => {

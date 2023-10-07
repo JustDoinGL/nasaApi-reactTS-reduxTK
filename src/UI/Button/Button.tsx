@@ -8,23 +8,33 @@ import styles from './Button.module.css'
 
 const Button = ({ text, styleProps, click, asteroid }: ButtonProps) => {
 	const dispatch = useAppDispatch()
-	const { activeAsteroids } = useAppSelector(state => state.asteroids)
-	const { searchPV, valueInput } = useAppSelector(state => state.searchPictures)
+	const { activeAsteroids } = useAppSelector((store) => store.asteroids)
+	const { searchPV, valueInput } = useAppSelector((store) => store.search)
 
 	const handleClick = () => {
-		if (text === 'choose' && asteroid) {
-			dispatch(click(asteroid))
-		} else if (text === 'destroy') {
-			click()
-		} else if (text === 'delete') {
-			dispatch(click())
-		} else if (text === 'Search') {
-			const q = searchPV[0]
-			dispatch(click([searchPV[0], valueInput]))
+		switch (text) {
+			case 'choose':
+				if (asteroid) {
+					dispatch(click(asteroid))
+				} else {
+					console.warn('No asteroid selected')
+				}
+				break
+			case 'destroy':
+				click()
+				break
+			case 'delete':
+				dispatch(click())
+				break
+			case 'Search':
+				dispatch(click([searchPV[0], valueInput]))
+				break
+			default:
+				console.warn('Unknown button type')
 		}
 	}
 
-	const isActive = asteroid && activeAsteroids.some(el => el.id === asteroid.id)
+	const isActive = asteroid && activeAsteroids.some((el: { id: string }) => el.id === asteroid.id)
 
 	return (
 		<button

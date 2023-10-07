@@ -1,0 +1,30 @@
+.gallery__item {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
+
+.skeleton {
+  background: gray;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
+
+.gallery__item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery__item:hover img {
+  transform: scale(1.1);
+}

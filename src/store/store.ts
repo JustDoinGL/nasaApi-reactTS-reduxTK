@@ -8,7 +8,7 @@ const store = configureStore({
   reducer: {
     asteroids: asteroidsSlice.reducer,
     pictures: picturesSlice.reducer,
-    searchPictures: searchSlice.reducer,
+    search: searchSlice.reducer,
   },
 })
 

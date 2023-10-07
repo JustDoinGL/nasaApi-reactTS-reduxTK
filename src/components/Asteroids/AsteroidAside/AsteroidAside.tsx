@@ -8,7 +8,7 @@ import { Button } from '../../../UI'
 import styles from './AsteroidAside.module.css'
 
 const AsteroidAside = () => {
-	const { countAsteroids } = useAppSelector(state => state.asteroids)
+	const { countAsteroids } = useAppSelector((store) => store.asteroids)
 	const navigate = useNavigate()
 
 	const goDestroy = () => {

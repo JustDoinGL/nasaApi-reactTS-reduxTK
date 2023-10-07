@@ -1,8 +1,8 @@
-export interface ISearchPicturesFull {
-  collection: Collection
+export interface ISearch {
+  collection: ISearchFull
 }
 
-export interface Collection {
+export interface ISearchFull {
   version: string
   href: string
   items: ISearchPictures[]

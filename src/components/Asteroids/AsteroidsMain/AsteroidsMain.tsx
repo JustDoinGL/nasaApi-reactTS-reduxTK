@@ -10,9 +10,7 @@ import {
 } from '../../../store/asteroids/asteroidsSlice'
 
 import getCurrentDate from '../../../actions/getCurrentDate'
-
 import Asteroid from './Asteroid/Asteroid'
-
 import { AsteroidsMainProps } from './AsteroidsMain.type'
 
 import styles from './AsteroidsMain.module.css'

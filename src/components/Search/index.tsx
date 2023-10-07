@@ -1,3 +1,4 @@
 import { SearchHeader } from './SearchHeader/SearchHeader'
+import { SearchMain } from './SearchMain/SearchMain'
 
-export { SearchHeader }
+export { SearchHeader, SearchMain }

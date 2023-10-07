@@ -10,7 +10,7 @@ import styles from './SearchHeader.module.css'
 
 const SearchHeader = () => {
 	const dispatch = useAppDispatch()
-	const { valueInput } = useAppSelector(store => store.searchPictures)
+	const { valueInput } = useAppSelector(store => store.search)
 
 	const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
 		dispatch(changeInput(e.target.value))
