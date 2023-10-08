@@ -25,7 +25,7 @@
 ## Видео-ролик для знакомства с проектом:
 
 
-Uploading 2023-10-08 19-56-01.mp4…
+[Uploading 2023-10-08 19-56-01.mp4…](https://www.youtube.com/watch?v=4Bxm04JZRoM)
 
 
 
