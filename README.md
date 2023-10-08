@@ -24,7 +24,7 @@
    ```
 ## Видео-ролик для знакомства с проектом:
 
-<video width="6400" height="380" controls>
+<video width="640" height="380" controls>
   <source src="./helpers/2023-10-08 19-56-01.mp4" type="video/mp4">
   Ваш браузер не поддерживает тег video.
 </video>
