@@ -15,7 +15,6 @@ import {
 	SearchLayout
 } from './components/Layout'
 
-import './App.css'
 
 function App() {
 	return (
