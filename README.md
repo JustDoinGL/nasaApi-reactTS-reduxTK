@@ -24,10 +24,7 @@
    ```
 ## Видео-ролик для знакомства с проектом:
 
-<video width="640" height="380" controls>
-  <source src="./helpers/2023-10-08 19-56-01.mp4" type="video/mp4">
-  Ваш браузер не поддерживает тег video.
-</video>
+https://user-images.githubusercontent.com/16564273/125283630-9845d180-e2e6-11eb-8b7d-f30a8f2eae8a.mp4
 
 ## Структура проекта:
 1. Краткое описание каждой папки в структуре проекта:
