@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/nasaApi-reactTS-reduxTK/static/css/main.e85ed5b6.css",
-    "main.js": "/nasaApi-reactTS-reduxTK/static/js/main.eabdc9a5.js",
-    "static/js/787.1f4db771.chunk.js": "/nasaApi-reactTS-reduxTK/static/js/787.1f4db771.chunk.js",
+    "main.css": "/nasaApi-reactTS-reduxTK/static/css/main.e928b651.css",
+    "main.js": "/nasaApi-reactTS-reduxTK/static/js/main.a1a02231.js",
     "static/media/BigDeckstop.png": "/nasaApi-reactTS-reduxTK/static/media/BigDeckstop.830893ec81438ee0e97b.png",
     "static/media/DecstopBG.png": "/nasaApi-reactTS-reduxTK/static/media/DecstopBG.0bc2066c7a77cfd204e8.png",
     "static/media/NASA_logo.png": "/nasaApi-reactTS-reduxTK/static/media/NASA_logo.e9895fc2d216d92251bb.png",
@@ -10,12 +9,11 @@
     "static/media/asteroidBig.svg": "/nasaApi-reactTS-reduxTK/static/media/asteroidBig.62adebfcb1fb8a1bf3d480d1c5881387.svg",
     "static/media/asteroidSmall.svg": "/nasaApi-reactTS-reduxTK/static/media/asteroidSmall.1dfe1b747f2a39a55d9bb1f63ee4dcc0.svg",
     "index.html": "/nasaApi-reactTS-reduxTK/index.html",
-    "main.e85ed5b6.css.map": "/nasaApi-reactTS-reduxTK/static/css/main.e85ed5b6.css.map",
-    "main.eabdc9a5.js.map": "/nasaApi-reactTS-reduxTK/static/js/main.eabdc9a5.js.map",
-    "787.1f4db771.chunk.js.map": "/nasaApi-reactTS-reduxTK/static/js/787.1f4db771.chunk.js.map"
+    "main.e928b651.css.map": "/nasaApi-reactTS-reduxTK/static/css/main.e928b651.css.map",
+    "main.a1a02231.js.map": "/nasaApi-reactTS-reduxTK/static/js/main.a1a02231.js.map"
   },
   "entrypoints": [
-    "static/css/main.e85ed5b6.css",
-    "static/js/main.eabdc9a5.js"
+    "static/css/main.e928b651.css",
+    "static/js/main.a1a02231.js"
   ]
 }
