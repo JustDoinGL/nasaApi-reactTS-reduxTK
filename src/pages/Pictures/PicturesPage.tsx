@@ -22,7 +22,7 @@ const PicturesPage = () => {
 
 	if (status === 'pending' || status === 'rejected') {
 		return (
-			<div className={styles.container__helper}>
+			<div className={styles.helper}>
 				<LoadError status={status} />
 			</div>
 		)

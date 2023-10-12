@@ -1,4 +1,4 @@
-.container__helper {
+.helper {
   display: flex;
   justify-content: center;
 }
@@ -12,7 +12,7 @@
   margin: 10px 20px; 
 }
 
-.main__img {
+.img {
   display: flex;
   flex-wrap: wrap;
 }

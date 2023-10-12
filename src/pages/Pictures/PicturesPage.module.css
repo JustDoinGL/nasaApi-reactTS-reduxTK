@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.container__helper {
+.helper {
   display: flex;
   justify-content: center;
 }

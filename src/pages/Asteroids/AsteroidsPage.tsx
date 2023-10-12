@@ -12,7 +12,7 @@ const AsteroidsPage = () => {
 	const { ref, inView } = useInView()
 
 	return (
-		<div className={styles.container__main}>
+		<div className={styles.container}>
 			<div className={styles.main}>
 				<AsteroidsHeader
 					title='Nearest asteroid approaches'

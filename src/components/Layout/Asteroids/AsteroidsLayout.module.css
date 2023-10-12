@@ -4,11 +4,11 @@
   min-height: 100vh;
 }
 
-.main__content {
+.content {
   flex-grow: 1;
 }
 
-.container__main {
+.main {
   position: relative;
 }
 

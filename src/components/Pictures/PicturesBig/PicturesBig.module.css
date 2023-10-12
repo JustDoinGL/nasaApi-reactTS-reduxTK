@@ -1,10 +1,10 @@
-.container__head {
+.head {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.big__photo {
+.photo {
   max-width: 990px;
 }
 

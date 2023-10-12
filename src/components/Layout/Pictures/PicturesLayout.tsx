@@ -12,7 +12,7 @@ const PicturesLayout = () => {
 	return (
 		<div className={styles.container}>
 			<Header data={objHeader} />
-			<main className={styles.main__content}>
+			<main className={styles.content}>
 				<Outlet />
 			</main>
 			<Footer />

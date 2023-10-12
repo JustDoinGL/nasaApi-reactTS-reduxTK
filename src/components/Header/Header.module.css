@@ -17,7 +17,7 @@
     height: 80px;
 }
 
-.nav__links {
+.links {
     list-style: none;
     display: flex;
     justify-content: center;

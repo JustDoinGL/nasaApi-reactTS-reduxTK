@@ -13,7 +13,7 @@ const Search = () => {
 	const renderContent = () => {
 		if (status === 'pending' || status === 'rejected') {
       return (
-        <div className={styles.container__helper}>
+        <div className={styles.helper}>
           <LoadError status={status} />
         </div>
       )
@@ -21,7 +21,7 @@ const Search = () => {
 
     if (items.length > 0 || !isLoad) {
       return (
-        <div className={styles.main__img}>
+        <div className={styles.img}>
           {items.map((item) => (
             <SearchMain item={item} key={item.href} />
           ))}

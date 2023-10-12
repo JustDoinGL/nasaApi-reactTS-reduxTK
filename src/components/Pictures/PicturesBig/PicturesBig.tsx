@@ -27,14 +27,14 @@ const PicturesBig = ({ picture, setIsOpen }: PicturesBigProps) => {
 	}
 
 	return (
-		<div className={styles.container__head}>
-			<div className={styles.side__svg} onClick={() => handleClickArrow(-1)}>
+		<div className={styles.head}>
+			<div className={styles.svg} onClick={() => handleClickArrow(-1)}>
 				<LeftGallery />
 			</div>
-			<div className={styles.big__photo} onClick={handleClickPicture}>
+			<div className={styles.photo} onClick={handleClickPicture}>
 				<RenderMedia picture={picture} />
 			</div>
-			<div className={styles.side__svg} onClick={() => handleClickArrow(1)}>
+			<div className={styles.svg} onClick={() => handleClickArrow(1)}>
 				<RightGallery />
 			</div>
 		</div>

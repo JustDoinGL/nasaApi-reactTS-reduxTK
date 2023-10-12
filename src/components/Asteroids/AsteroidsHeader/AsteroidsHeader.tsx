@@ -15,12 +15,12 @@ const AsteroidsHeader = ({ title, refUseInViewPage }: AsteroidsHeaderProps) => {
 	}
 
 	const getTextClassName = (isActive: boolean) =>
-		isActive ? `${styles.text} ${styles.text__active}` : styles.text
+		isActive ? `${styles.text} ${styles.active}` : styles.text
 
 	return (
 		<div className={styles.header} ref={refUseInViewPage}>
-			<h1 className={styles.infinity__title}>{title}</h1>
-			<div className={styles.text__container}>
+			<h1 className={styles.title}>{title}</h1>
+			<div className={styles.container}>
 				<p className={getTextClassName(activeKilometers)} onClick={handleClick}>
 					in kilometers
 				</p>

@@ -20,16 +20,16 @@ const SearchDropDownList = () => {
 		dispatch(changeSearch(index + 1))
 	}
 	return (
-		<div className={styles.dropdown__container} onClick={handleDropdownClick}>
+		<div className={styles.container} onClick={handleDropdownClick}>
 			<p>{searchPV[0]}</p>
 			<ul
-				className={styles.dropdown__list}
+				className={styles.list}
 				style={{ display: showDropdown ? 'block' : 'none' }}
 			>
 				{searchPV.slice(1).map((el, index) => (
 					<li
 						key={index}
-						className={styles.dropdown__list_item}
+						className={styles._item}
 						onClick={() => handleDropdownItemClick(index)}
 					>
 						{el}

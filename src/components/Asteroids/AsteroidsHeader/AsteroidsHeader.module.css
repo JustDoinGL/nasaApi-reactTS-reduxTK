@@ -9,7 +9,7 @@
   margin-left: 66px;
 }
 
-.infinity__title {
+.title {
   align-self: stretch;
   color: var(--White-Base, #FFF);
   font-family: Helvetica;
@@ -19,7 +19,7 @@
   line-height: 36px;
 }
 
-.text__container {
+.container {
   display: flex;
 }
 
@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 
-.text__active {
+.active {
   text-decoration-line: underline;
 }
 

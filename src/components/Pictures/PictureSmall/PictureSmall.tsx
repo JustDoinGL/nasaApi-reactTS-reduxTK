@@ -19,7 +19,7 @@ const PictureSmall = ({ picture }: PicturesSmallProps) => {
 	}
 
 	return (
-		<div className={styles.small__photo} onClick={clickHandler}>
+		<div className={styles.photo} onClick={clickHandler}>
 			<RenderMedia picture={picture} />
 		</div>
 	)

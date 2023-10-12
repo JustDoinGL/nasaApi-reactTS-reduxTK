@@ -8,8 +8,8 @@ const AsteroidsLayout = () => {
 	return (
 		<div className={styles.container}>
 			<HeaderAsteroids />
-			<main className={styles.main__content}>
-				<div className={styles.container__main}>
+			<main className={styles.content}>
+				<div className={styles.main}>
 					<div className={styles.bg}></div>
 					<Outlet />
 				</div>

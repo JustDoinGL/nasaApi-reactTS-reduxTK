@@ -4,7 +4,7 @@ import {
 	AsteroidPage,
 	AsteroidsPage,
 	DestroyPage,
-	NotFound,
+	NotFoundPage,
 	PicturesPage,
 	Search
 } from './pages'
@@ -34,7 +34,7 @@ function App() {
 					<Route path={`/asteroids/:id`} element={<AsteroidPage />} />
 				</Route>
 
-				<Route path={`*`} element={<NotFound />} />
+				<Route path={`*`} element={<NotFoundPage />} />
 			</Routes>
 		</>
 	)

@@ -4,13 +4,13 @@ import styles from './Footer.module.css'
 const Footer = () => {
 	return (
 		<footer className={styles.footer}>
-        <div className={styles.footer__container}>
-          <div className={styles.footer__items}>
-            <a href='https://github.com/JustDoinGL/nasaApi-reactTS-reduxTK' className={styles.footer__link}>
+        <div className={styles.container}>
+          <div className={styles.items}>
+            <a href='https://github.com/JustDoinGL/nasaApi-reactTS-reduxTK' className={styles.link}>
               Repository
             </a>
           </div>
-          <div className={styles.footer__year}>2023</div>
+          <div className={styles.year}>2023</div>
         </div>
       </footer>
 	)

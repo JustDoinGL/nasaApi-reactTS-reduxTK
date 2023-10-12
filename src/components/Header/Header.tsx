@@ -16,7 +16,7 @@ const Header = ({ data }: HeaderProps) => {
 				</NavLink>
 			</div>
 			<nav>
-				<ul className={styles.nav__links}>
+				<ul className={styles.links}>
 					{data.map(link => {
 						return (
 							<li key={link.url}>

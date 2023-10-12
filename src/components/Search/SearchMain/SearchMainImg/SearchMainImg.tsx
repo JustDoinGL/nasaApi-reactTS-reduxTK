@@ -1,5 +1,5 @@
-import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 import { SearchMainImgProps } from './SearchMain.type'
 
@@ -21,7 +21,7 @@ const SearchMainImg = ({ el, description, item}: SearchMainImgProps) => {
 	return (
 		<>
 			{isOpen && <Modal setIsOpen={setIsOpen} picture={el} item={item} />}
-			<div className={styles.gallery__item} key={el.href} ref={ref}>
+			<div className={styles.item} key={el.href} ref={ref}>
 				{inView ? (
 					<img src={el.href} alt={description} onClick={handleClick} />
 				) : (

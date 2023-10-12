@@ -21,9 +21,9 @@ const AsteroidHeader = ({asteroid}:AsteroidHeaderProps) => {
 	return (
 		<>
 			<h3 className={styles.h3}>{getData(asteroid)}</h3>
-			<div className={styles.container__main}>
+			<div className={styles.container}>
 				<div>
-					<p className={styles.container__main_left}>
+					<p className={styles.main}>
 						{getActiveKilometers(activeKilometers, asteroid)}
 					</p>
 					<DoubleArrow />
