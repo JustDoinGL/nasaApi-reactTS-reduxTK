@@ -4,7 +4,7 @@ import { changeInput, fetchSearch } from '../../../store/search/searchSlice'
 
 import SearchDropDownList from './SearchDropDownList/SearchDropDownList'
 import { Button } from '../../../UI'
-import { Search } from '../../../svg'
+import { CloseButton, Search } from '../../../svg'
 
 import styles from './SearchHeader.module.css'
 
@@ -27,6 +27,11 @@ const SearchHeader = () => {
 					value={valueInput}
 					onChange={e => changeValue(e)}
 				/>
+				{valueInput && (
+					<div className={styles.closeButton} onClick={() => dispatch(changeInput(""))}>
+						<CloseButton />
+					</div>
+				)}
 			</div>
 			<SearchDropDownList />
 			<Button click={fetchSearch} text='Search' styleProps='search' />

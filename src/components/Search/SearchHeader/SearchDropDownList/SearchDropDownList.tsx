@@ -29,14 +29,14 @@ const SearchDropDownList = () => {
 				{searchPV.slice(1).map((el, index) => (
 					<li
 						key={index}
-						className={styles._item}
+						className={styles.item}
 						onClick={() => handleDropdownItemClick(index)}
 					>
 						{el}
 					</li>
 				))}
 			</ul>
-			{<ArrowBottom />}
+			<ArrowBottom />
 		</div>
 	)
 }

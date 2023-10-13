@@ -15,3 +15,12 @@
 .arrowWhite:hover {
   stroke: gold;
 }
+
+.button {
+  cursor: pointer;
+  fill: black;
+}
+
+.button:hover {
+  fill: gold;
+}

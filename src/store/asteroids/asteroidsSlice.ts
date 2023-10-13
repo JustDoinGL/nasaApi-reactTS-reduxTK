@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { utils } from '../../utils'
-import { IAsteroids, IAsteroidsDate } from '../../interface/asteroids'
+import { IAsteroidsDate } from '../../interface/asteroids'
 
 const { api } = utils
+
 const ASTEROID_ID_KEY = 'asteroid_name'
 
 const getAsteroidFromLocalStorage = (): IAsteroidsDate[] => {

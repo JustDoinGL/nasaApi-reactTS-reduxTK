@@ -9,6 +9,7 @@
 
 .search {
   display: flex;
+  position: relative;
   padding: 10px;
   align-items: flex-start;
   gap: 10px;
@@ -24,4 +25,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: 26px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }

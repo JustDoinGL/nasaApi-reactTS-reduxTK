@@ -1,7 +1,6 @@
 export type HeaderProps = {
-    data:{
+    data: {
         url: string,
         name: string
     }[]
-
 }

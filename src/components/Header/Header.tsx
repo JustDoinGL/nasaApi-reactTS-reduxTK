@@ -1,13 +1,12 @@
 import { NavLink } from 'react-router-dom'
 
+import { HeaderProps } from './Header.type'
+
 import img from '../../img/NASA_logo.png'
 
 import styles from './Header.module.css'
 
-import { HeaderProps } from './Header.type'
-
 const Header = ({ data }: HeaderProps) => {
-
 	return (
 		<header className={styles.container}>
 			<div className={styles.logo}>

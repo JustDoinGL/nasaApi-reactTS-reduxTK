@@ -13,7 +13,6 @@ import { RenderMedia } from '../../../UI'
 
 import styles from './PicturesBig.module.css'
 
-
 const PicturesBig = ({ picture, setIsOpen }: PicturesBigProps) => {
 	const dispatch = useAppDispatch()
 
