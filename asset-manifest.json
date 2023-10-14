@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nasaApi-reactTS-reduxTK/static/css/main.05230d3f.css",
-    "main.js": "/nasaApi-reactTS-reduxTK/static/js/main.873f2615.js",
+    "main.js": "/nasaApi-reactTS-reduxTK/static/js/main.f7f7797a.js",
     "static/media/BigDeckstop.png": "/nasaApi-reactTS-reduxTK/static/media/BigDeckstop.830893ec81438ee0e97b.png",
     "static/media/DecstopBG.png": "/nasaApi-reactTS-reduxTK/static/media/DecstopBG.0bc2066c7a77cfd204e8.png",
     "static/media/NASA_logo.png": "/nasaApi-reactTS-reduxTK/static/media/NASA_logo.e9895fc2d216d92251bb.png",
@@ -10,10 +10,10 @@
     "static/media/asteroidSmall.svg": "/nasaApi-reactTS-reduxTK/static/media/asteroidSmall.1dfe1b747f2a39a55d9bb1f63ee4dcc0.svg",
     "index.html": "/nasaApi-reactTS-reduxTK/index.html",
     "main.05230d3f.css.map": "/nasaApi-reactTS-reduxTK/static/css/main.05230d3f.css.map",
-    "main.873f2615.js.map": "/nasaApi-reactTS-reduxTK/static/js/main.873f2615.js.map"
+    "main.f7f7797a.js.map": "/nasaApi-reactTS-reduxTK/static/js/main.f7f7797a.js.map"
   },
   "entrypoints": [
     "static/css/main.05230d3f.css",
-    "static/js/main.873f2615.js"
+    "static/js/main.f7f7797a.js"
   ]
 }
