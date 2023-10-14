@@ -16,7 +16,7 @@ const initialState: HeaderState = {
 }
 
 export const headerSlice = createSlice({
-  name: 'asteroids',
+  name: 'header',
   initialState,
   reducers: {},
   extraReducers: {}

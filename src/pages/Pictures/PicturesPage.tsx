@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { useEffect, useState } from 'react'
 
-import { fetchPictures } from '../../store/pictures/picturesSlice'
+import { fetchPictures, getPicturesSelector } from '../../store/pictures/picturesSlice'
 
 import { PictureSmall } from '../../components/Pictures'
 import PicturesBig from '../../components/Pictures/PicturesBig/PicturesBig'
@@ -11,14 +11,14 @@ import styles from './PicturesPage.module.css'
 
 const PicturesPage = () => {
 	const dispatch = useAppDispatch()
-	const { status, picturesArr } = useAppSelector(state => state.pictures)
+	const { status, picturesArr } = useAppSelector(getPicturesSelector)
 	const [isOpen, setIsOpen] = useState(false)
 
 	useEffect(() => {
 		if (picturesArr.length === 0) {
 			dispatch(fetchPictures(7))
 		}
-	}, [dispatch])
+	}, [])
 
 	if (status === 'pending' || status === 'rejected') {
 		return (
@@ -26,13 +26,11 @@ const PicturesPage = () => {
 				<LoadError status={status} />
 			</div>
 		)
-	} 
+	}
 
 	return (
 		<div className={styles.main}>
-			 {isOpen && (
-				<Modal setIsOpen={setIsOpen} picture={picturesArr[0]} />      
-      )}
+			{isOpen && <Modal setIsOpen={setIsOpen} picture={picturesArr[0]} />}
 			<PicturesBig picture={picturesArr[0]} setIsOpen={setIsOpen} />
 			<div className={styles.container}>
 				{picturesArr &&
@@ -44,4 +42,4 @@ const PicturesPage = () => {
 	)
 }
 
-export {PicturesPage}
+export { PicturesPage }

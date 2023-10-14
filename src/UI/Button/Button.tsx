@@ -2,14 +2,17 @@ import React from 'react'
 
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 
+import { getAsteroidsSelector } from '../../store/asteroids/asteroidsSlice'
+import { getSearchSelector } from '../../store/search/searchSlice'
+
 import { ButtonProps } from './Button.type'
 
 import styles from './Button.module.css'
 
 const Button = ({ text, styleProps, click, asteroid }: ButtonProps) => {
 	const dispatch = useAppDispatch()
-	const { activeAsteroids } = useAppSelector(state => state.asteroids)
-	const { searchPV, valueInput } = useAppSelector(state => state.search)
+	const { activeAsteroids } = useAppSelector(getAsteroidsSelector)
+	const { searchPV, valueInput } = useAppSelector(getSearchSelector)
 
 	const handleClick = () => {
 		switch (text) {

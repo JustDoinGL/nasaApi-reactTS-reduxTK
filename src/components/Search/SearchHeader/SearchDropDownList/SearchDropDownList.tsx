@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux'
 
-import { changeSearch } from '../../../../store/search/searchSlice'
+import { changeSearch, getSearchSelector } from '../../../../store/search/searchSlice'
 
 import { ArrowBottom } from '../../../../svg'
 
@@ -9,7 +9,7 @@ import styles from './SearchDropDownList.module.css'
 
 const SearchDropDownList = () => {
 	const dispatch = useAppDispatch()
-	const { searchPV } = useAppSelector(state => state.search)
+	const { searchPV } = useAppSelector(getSearchSelector)
 	const [showDropdown, setShowDropdown] = useState(false)
 
 	const handleDropdownClick = () => {

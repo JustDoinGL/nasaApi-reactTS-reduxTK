@@ -7,6 +7,7 @@ import {
 	getImageSrc,
 	getName
 } from '.././Asteroid.actions'
+import { getAsteroidsSelector } from '../../../../../store/asteroids/asteroidsSlice'
 
 import { AsteroidHeaderProps } from './AsteroidHeader.type'
 
@@ -14,10 +15,9 @@ import { DoubleArrow } from '../../../../../svg/index'
 
 import styles from './AsteroidHeader.module.css'
 
-
 const AsteroidHeader = ({asteroid}:AsteroidHeaderProps) => {
 
-	const {activeKilometers} = useAppSelector(state => state.asteroids)
+	const {activeKilometers} = useAppSelector(getAsteroidsSelector)
 	return (
 		<>
 			<h3 className={styles.h3}>{getData(asteroid)}</h3>

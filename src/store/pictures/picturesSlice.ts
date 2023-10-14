@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { utils } from '../../utils'
 import { IPictures } from '../../interface/pictures'
+import { RootState } from '../store'
 
 const { api } = utils
 
@@ -58,5 +59,7 @@ export const picturesSlice = createSlice({
       })
   },
 })
+
+export const getPicturesSelector = (state: RootState) => state.pictures
 
 export const { changeImg, changeClick } = picturesSlice.actions

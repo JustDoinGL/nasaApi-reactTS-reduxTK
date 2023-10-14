@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { ISearchPictures, ISearch } from '../../interface/searchPictures'
+import { RootState } from '../store'
 
 export const fetchSearch = createAsyncThunk<ISearch, string[]>(
   'search/fetchSearch',
@@ -64,5 +65,7 @@ export const searchSlice = createSlice({
       })
   },
 })
+
+export const getSearchSelector = (state: RootState) => state.search
 
 export const { changeInput, changeSearch } = searchSlice.actions

@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { utils } from '../../utils'
 import { IAsteroidsDate } from '../../interface/asteroids'
+import { RootState } from '../store'
 
 const { api } = utils
 
@@ -90,5 +91,7 @@ export const asteroidsSlice = createSlice({
       })
   },
 })
+
+export const getAsteroidsSelector = (state: RootState) => state.asteroids
 
 export const { incrementAsteroids, asteroidsData, deleteAsteroids, getAsteroid, isActiveKilometers } = asteroidsSlice.actions

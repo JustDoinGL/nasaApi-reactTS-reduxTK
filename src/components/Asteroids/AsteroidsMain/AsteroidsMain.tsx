@@ -8,7 +8,8 @@ import { AsteroidsMainProps } from './AsteroidsMain.type'
 
 import {
 	fetchAsteroids,
-	asteroidsData
+	asteroidsData,
+	getAsteroidsSelector
 } from '../../../store/asteroids/asteroidsSlice'
 
 import { BtnUpArrow, LoadError } from '../../../UI'
@@ -19,9 +20,8 @@ import styles from './AsteroidsMain.module.css'
 const AsteroidsMain = ({ inViewPage }: AsteroidsMainProps) => {
 	const dispatch = useAppDispatch()
 
-	const { status, arrAsteroids, data, countAsteroids } = useAppSelector(
-		state => state.asteroids
-	)
+	const { status, arrAsteroids, data, countAsteroids } =
+		useAppSelector(getAsteroidsSelector)
 
 	const { ref, inView } = useInView()
 

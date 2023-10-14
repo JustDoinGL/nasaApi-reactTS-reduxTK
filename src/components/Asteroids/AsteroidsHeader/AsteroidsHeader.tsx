@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 
-import { isActiveKilometers } from '../../../store/asteroids/asteroidsSlice'
+import { getAsteroidsSelector, isActiveKilometers } from '../../../store/asteroids/asteroidsSlice'
 
 import { AsteroidsHeaderProps } from './AsteroidsHeader.type'
 
@@ -8,7 +8,7 @@ import styles from './AsteroidsHeader.module.css'
 
 const AsteroidsHeader = ({ title, refUseInViewPage }: AsteroidsHeaderProps) => {
 	const dispatch = useAppDispatch()
-	const { activeKilometers } = useAppSelector(state => state.asteroids)
+	const { activeKilometers } = useAppSelector(getAsteroidsSelector)
 
 	const handleClick = () => {
 		dispatch(isActiveKilometers())

@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 
-import { getAsteroid } from '../../../store/asteroids/asteroidsSlice'
+import { getAsteroid, getAsteroidsSelector } from '../../../store/asteroids/asteroidsSlice'
 
 import { Asteroid, AsteroidsHeader } from '../../../components/Asteroids'
 
@@ -16,7 +16,7 @@ const AsteroidPage = () => {
 		}
 	}, [id])
 
-	const { asteroid } = useAppSelector(state => state.asteroids)
+	const { asteroid } = useAppSelector(getAsteroidsSelector)
 	return (
 		<>
 			<AsteroidsHeader title='Information about the astroid' />

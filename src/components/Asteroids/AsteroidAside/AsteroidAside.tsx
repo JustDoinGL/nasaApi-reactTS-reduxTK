@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom'
 import { useAppSelector } from '../../../hooks/redux'
 
-import { deleteAsteroids } from '../../../store/asteroids/asteroidsSlice'
+import { deleteAsteroids, getAsteroidsSelector } from '../../../store/asteroids/asteroidsSlice'
 
 import { Button } from '../../../UI'
 
 import styles from './AsteroidAside.module.css'
 
 const AsteroidAside = () => {
-	const { countAsteroids } = useAppSelector(state => state.asteroids)
+	const { countAsteroids } = useAppSelector(getAsteroidsSelector)
 	const navigate = useNavigate()
 
 	const goDestroy = () => {
