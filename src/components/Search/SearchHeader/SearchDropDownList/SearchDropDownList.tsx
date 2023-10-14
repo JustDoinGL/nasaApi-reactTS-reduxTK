@@ -9,7 +9,7 @@ import styles from './SearchDropDownList.module.css'
 
 const SearchDropDownList = () => {
 	const dispatch = useAppDispatch()
-	const { searchPV } = useAppSelector(store => store.search)
+	const { searchPV } = useAppSelector(state => state.search)
 	const [showDropdown, setShowDropdown] = useState(false)
 
 	const handleDropdownClick = () => {

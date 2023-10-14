@@ -16,7 +16,7 @@ const AsteroidPage = () => {
 		}
 	}, [id])
 
-	const { asteroid } = useAppSelector(store => store.asteroids)
+	const { asteroid } = useAppSelector(state => state.asteroids)
 	return (
 		<>
 			<AsteroidsHeader title='Information about the astroid' />

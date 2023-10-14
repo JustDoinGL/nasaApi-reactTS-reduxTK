@@ -17,7 +17,7 @@ import styles from './AsteroidHeader.module.css'
 
 const AsteroidHeader = ({asteroid}:AsteroidHeaderProps) => {
 
-	const {activeKilometers} = useAppSelector(store => store.asteroids)
+	const {activeKilometers} = useAppSelector(state => state.asteroids)
 	return (
 		<>
 			<h3 className={styles.h3}>{getData(asteroid)}</h3>

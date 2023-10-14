@@ -7,7 +7,7 @@ import { Footer, Header } from '../../index'
 import styles from './SearchLayout.module.css'
 
 const SearchLayout = () => {
-	const { objHeader } = useAppSelector(store => store.header)
+	const { objHeader } = useAppSelector(state => state.header)
 
 	return (
 		<div className={styles.container}>

@@ -10,11 +10,18 @@ import styles from './SearchHeader.module.css'
 
 const SearchHeader = () => {
 	const dispatch = useAppDispatch()
-	const { valueInput } = useAppSelector(store => store.search)
+	const { valueInput, searchPV } = useAppSelector(state => state.search)
 
-	const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-		dispatch(changeInput(e.target.value))
-	}
+	const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      dispatch(fetchSearch([searchPV[0], valueInput]))
+			e.currentTarget.blur()
+    }
+  }
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(changeInput(e.target.value))
+  }
 
 	return (
 		<div className={styles.container}>
@@ -25,7 +32,8 @@ const SearchHeader = () => {
 					type='text'
 					placeholder='The name of the planet...'
 					value={valueInput}
-					onChange={e => changeValue(e)}
+					onChange={e => handleChange(e)}
+					onKeyDown={handleKeyDown}
 				/>
 				{valueInput && (
 					<div className={styles.closeButton} onClick={() => dispatch(changeInput(""))}>

@@ -10,7 +10,7 @@ import styles from './DestroysPage.module.css'
 const DestroyPage = () => {
 	const { ref, inView } = useInView()
 
-	const { activeAsteroids } = useAppSelector(store => store.asteroids)
+	const { activeAsteroids } = useAppSelector(state => state.asteroids)
 
 	return (
 		<>

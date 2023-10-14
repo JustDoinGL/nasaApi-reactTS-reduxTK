@@ -10,7 +10,7 @@ import styles from './PictureSmall.module.css'
 
 const PictureSmall = ({ picture }: PicturesSmallProps) => {
 	const dispatch = useAppDispatch()
-	const { picturesArr } = useAppSelector(store => store.pictures)
+	const { picturesArr } = useAppSelector(state => state.pictures)
 
 	const clickHandler = () => {
 		const index = picturesArr.findIndex(p => p.url === picture.url)

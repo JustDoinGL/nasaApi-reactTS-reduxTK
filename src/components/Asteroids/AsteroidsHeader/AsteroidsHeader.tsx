@@ -8,7 +8,7 @@ import styles from './AsteroidsHeader.module.css'
 
 const AsteroidsHeader = ({ title, refUseInViewPage }: AsteroidsHeaderProps) => {
 	const dispatch = useAppDispatch()
-	const { activeKilometers } = useAppSelector(store => store.asteroids)
+	const { activeKilometers } = useAppSelector(state => state.asteroids)
 
 	const handleClick = () => {
 		dispatch(isActiveKilometers())

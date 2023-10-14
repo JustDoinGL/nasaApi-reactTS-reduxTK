@@ -7,7 +7,7 @@ import styles from './Search.module.css'
 
 const Search = () => {
 	const { items, status, valueInputLast, isLoad } = useAppSelector(
-		store => store.search
+		state => state.search
 	)
 
 	const renderContent = () => {

@@ -5,7 +5,7 @@ import { Header, Footer } from '../../components/index'
 import styles from './NotFoundPage.module.css'
 
 const NotFoundPage = () => {
-	const {objHeader} = useAppSelector(store => store.header)
+	const {objHeader} = useAppSelector(state => state.header)
 
 	return (
 		<div className={styles.container}>

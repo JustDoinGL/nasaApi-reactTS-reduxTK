@@ -8,8 +8,8 @@ import styles from './Button.module.css'
 
 const Button = ({ text, styleProps, click, asteroid }: ButtonProps) => {
 	const dispatch = useAppDispatch()
-	const { activeAsteroids } = useAppSelector((store) => store.asteroids)
-	const { searchPV, valueInput } = useAppSelector((store) => store.search)
+	const { activeAsteroids } = useAppSelector(state => state.asteroids)
+	const { searchPV, valueInput } = useAppSelector(state => state.search)
 
 	const handleClick = () => {
 		switch (text) {
