@@ -13,7 +13,7 @@ import {
 	AsteroidsLayout,
 	PicturesLayout,
 	SearchLayout
-} from './components/Layout'
+} from './layout'
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
 					<Route path={`/asteroids/:id`} element={<AsteroidPage />} />
 				</Route>
 
-				<Route path={`*`} element={<NotFoundPage />} />
+				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 		</>
 	)

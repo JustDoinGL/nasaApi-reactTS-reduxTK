@@ -16,7 +16,7 @@
   position: fixed;
   width: 377px;
   height: 436px;
-  background-image: url("../../../img/MobileBG.png");
+  background-image: url("../../assets/img/MobileBG.png");
   background-repeat: no-repeat;
   z-index: -10;
 }
@@ -24,13 +24,13 @@
 
 @media (min-width: 650px) {
   .bg {
-    background-image: url("../../../img/DecstopBG.png");
+    background-image: url("../../assets/img/DecstopBG.png");
   }
 }
 
 @media (min-width: 1200px) {
   .bg {
-    background-image: url("../../../img/BigDeckstop.png");
+    background-image: url("../../assets/img/BigDeckstop.png");
     width: 536px;
     height: 620px;
   }

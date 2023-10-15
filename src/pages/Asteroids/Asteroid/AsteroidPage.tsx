@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 
-import { getAsteroid, getAsteroidsSelector } from '../../../store/asteroids/asteroidsSlice'
+import { getAsteroid, getAsteroidsSelector } from '../../../redux/asteroids/asteroidsSlice'
 
 import { Asteroid, AsteroidsHeader } from '../../../components/Asteroids'
 

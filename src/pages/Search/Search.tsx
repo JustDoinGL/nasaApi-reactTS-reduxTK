@@ -1,6 +1,6 @@
 import { SearchHeader, SearchMain } from '../../components/Search'
 import { useAppSelector } from '../../hooks/redux'
-import { getSearchSelector } from '../../store/search/searchSlice'
+import { getSearchSelector } from '../../redux/search/searchSlice'
 
 import { LoadError, NoResultsFound } from '../../UI'
 

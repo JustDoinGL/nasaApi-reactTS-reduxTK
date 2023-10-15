@@ -7,17 +7,16 @@ import {
 	getImageSrc,
 	getName
 } from '.././Asteroid.actions'
-import { getAsteroidsSelector } from '../../../../../store/asteroids/asteroidsSlice'
+import { getAsteroidsSelector } from '../../../../../redux/asteroids/asteroidsSlice'
 
 import { AsteroidHeaderProps } from './AsteroidHeader.type'
 
-import { DoubleArrow } from '../../../../../svg/index'
+import { DoubleArrow } from '../../../../../assets/svg/index'
 
 import styles from './AsteroidHeader.module.css'
 
-const AsteroidHeader = ({asteroid}:AsteroidHeaderProps) => {
-
-	const {activeKilometers} = useAppSelector(getAsteroidsSelector)
+const AsteroidHeader = ({ asteroid }: AsteroidHeaderProps) => {
+	const { activeKilometers } = useAppSelector(getAsteroidsSelector)
 	return (
 		<>
 			<h3 className={styles.h3}>{getData(asteroid)}</h3>

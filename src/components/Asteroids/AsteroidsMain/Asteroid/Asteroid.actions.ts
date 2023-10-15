@@ -1,7 +1,7 @@
 import { IAsteroidsDate } from "../../../../interface/asteroids"
 
-import BigAsteroid from '../../../../img/asteroidBig.svg'
-import SmallAsteroid from '../../../../img/asteroidSmall.svg'
+import BigAsteroid from '../../../../assets/img/asteroidBig.svg'
+import SmallAsteroid from '../../../../assets/img/asteroidSmall.svg'
 
 const getData = (el: IAsteroidsDate) => {
     const date = new Date(el.close_approach_data[0].close_approach_date);

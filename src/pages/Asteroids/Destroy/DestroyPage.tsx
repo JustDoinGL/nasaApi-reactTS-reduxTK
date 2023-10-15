@@ -1,7 +1,7 @@
 import { useInView } from 'react-intersection-observer'
 import { useAppSelector } from '../../../hooks/redux'
 
-import { getAsteroidsSelector } from '../../../store/asteroids/asteroidsSlice'
+import { getAsteroidsSelector } from '../../../redux/asteroids/asteroidsSlice'
 
 import { AsteroidsHeader } from '../../../components/Asteroids'
 import Asteroid from '../../../components/Asteroids/AsteroidsMain/Asteroid/Asteroid'

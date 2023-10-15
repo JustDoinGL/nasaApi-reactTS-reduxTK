@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 
-import { changeImg, fetchPictures, getPicturesSelector } from '../../../store/pictures/picturesSlice'
+import { changeImg, fetchPictures, getPicturesSelector } from '../../../redux/pictures/picturesSlice'
 
 import { PicturesSmallProps } from './PictureSmall.type'
 

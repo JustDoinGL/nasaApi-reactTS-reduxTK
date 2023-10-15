@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux'
 
-import { changeSearch, getSearchSelector } from '../../../../store/search/searchSlice'
+import {
+	changeSearch,
+	getSearchSelector
+} from '../../../../redux/search/searchSlice'
 
-import { ArrowBottom } from '../../../../svg'
+import { ArrowBottom } from '../../../../assets/svg'
 
 import styles from './SearchDropDownList.module.css'
 

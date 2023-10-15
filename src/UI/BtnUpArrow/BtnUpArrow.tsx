@@ -1,4 +1,4 @@
-import { ArrowTop } from '../../svg'
+import { ArrowTop } from '../../assets/svg'
 
 const BtnUpArrow = () => {
 	const scrollToTop = () => {

@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 
-import { getAsteroidsSelector, isActiveKilometers } from '../../../store/asteroids/asteroidsSlice'
+import { getAsteroidsSelector, isActiveKilometers } from '../../../redux/asteroids/asteroidsSlice'
 
 import { AsteroidsHeaderProps } from './AsteroidsHeader.type'
 

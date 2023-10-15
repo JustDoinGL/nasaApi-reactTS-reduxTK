@@ -1,10 +1,10 @@
-import { incrementAsteroids } from '../../../../store/asteroids/asteroidsSlice'
+import { incrementAsteroids } from '../../../../redux/asteroids/asteroidsSlice'
 
 import { Link } from 'react-router-dom'
 
 import { AsteroidProps } from './Asteroid.type'
 
-import Dangerous from '../../../../img/Dangerous.png'
+import Dangerous from '../../../../assets/img/Dangerous.png'
 
 import { Button } from '../../../../UI'
 import AsteroidHeader from './AsteroidHeader/AsteroidHeader'

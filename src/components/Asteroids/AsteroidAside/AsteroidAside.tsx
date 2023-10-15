@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useAppSelector } from '../../../hooks/redux'
 
-import { deleteAsteroids, getAsteroidsSelector } from '../../../store/asteroids/asteroidsSlice'
+import { deleteAsteroids, getAsteroidsSelector } from '../../../redux/asteroids/asteroidsSlice'
 
 import { Button } from '../../../UI'
 

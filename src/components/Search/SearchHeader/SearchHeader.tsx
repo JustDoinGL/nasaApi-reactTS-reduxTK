@@ -1,11 +1,15 @@
 import React, { useEffect, useRef } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 
-import { changeInput, fetchSearch, getSearchSelector } from '../../../store/search/searchSlice'
+import {
+	changeInput,
+	fetchSearch,
+	getSearchSelector
+} from '../../../redux/search/searchSlice'
 
 import SearchDropDownList from './SearchDropDownList/SearchDropDownList'
 import { Button } from '../../../UI'
-import { CloseButton, Search } from '../../../svg'
+import { CloseButton, Search } from '../../../assets/svg'
 
 import styles from './SearchHeader.module.css'
 

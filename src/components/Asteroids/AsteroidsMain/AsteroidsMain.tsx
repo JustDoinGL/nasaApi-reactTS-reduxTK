@@ -10,7 +10,7 @@ import {
 	fetchAsteroids,
 	asteroidsData,
 	getAsteroidsSelector
-} from '../../../store/asteroids/asteroidsSlice'
+} from '../../../redux/asteroids/asteroidsSlice'
 
 import { BtnUpArrow, LoadError } from '../../../UI'
 import Asteroid from './Asteroid/Asteroid'

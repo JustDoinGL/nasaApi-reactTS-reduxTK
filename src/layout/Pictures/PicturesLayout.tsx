@@ -1,8 +1,8 @@
+import { useAppSelector } from '../../hooks/redux'
+
 import { Outlet } from 'react-router-dom'
 
-import { useAppSelector } from '../../../hooks/redux'
-
-import { Footer, Header } from '../../index'
+import { Footer, Header } from '../../components'
 
 import styles from './PicturesLayout.module.css'
 

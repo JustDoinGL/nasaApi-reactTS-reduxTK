@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { useEffect, useState } from 'react'
 
-import { fetchPictures, getPicturesSelector } from '../../store/pictures/picturesSlice'
+import { fetchPictures, getPicturesSelector } from '../../redux/pictures/picturesSlice'
 
 import { PictureSmall } from '../../components/Pictures'
 import PicturesBig from '../../components/Pictures/PicturesBig/PicturesBig'

@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 import { HeaderProps } from './Header.type'
 
-import img from '../../img/NASA_logo.png'
+import img from '../../assets/img/NASA_logo.png'
 
 import styles from './Header.module.css'
 

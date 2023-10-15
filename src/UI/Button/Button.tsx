@@ -2,8 +2,8 @@ import React from 'react'
 
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 
-import { getAsteroidsSelector } from '../../store/asteroids/asteroidsSlice'
-import { getSearchSelector } from '../../store/search/searchSlice'
+import { getAsteroidsSelector } from '../../redux/asteroids/asteroidsSlice'
+import { getSearchSelector } from '../../redux/search/searchSlice'
 
 import { ButtonProps } from './Button.type'
 
