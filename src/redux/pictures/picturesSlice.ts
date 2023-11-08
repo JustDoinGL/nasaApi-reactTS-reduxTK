@@ -3,6 +3,7 @@ import axios from 'axios'
 import { utils } from '../../utils'
 import { IPictures } from '../../interface/pictures'
 import { RootState } from '../store'
+import { Status } from '../@types/enum'
 
 const { api } = utils
 
@@ -19,12 +20,12 @@ export const fetchPictures = createAsyncThunk<IPictures[], number>(
 )
 
 type PicturesState = {
-  status: 'pending' | 'fulfilled' | 'rejected'
+  status: Status
   picturesArr: IPictures[]
 }
 
 const initialState: PicturesState = {
-  status: 'pending',
+  status: Status.pending,
   picturesArr: [],
 }
 
@@ -48,14 +49,14 @@ export const picturesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchPictures.pending, (state) => {
-        state.status = 'pending'
+        state.status = Status.pending
       })
       .addCase(fetchPictures.fulfilled, (state, action) => {
         state.picturesArr = [...state.picturesArr, ...action.payload]
-        state.status = 'fulfilled'
+        state.status = Status.fulfilled
       })
       .addCase(fetchPictures.rejected, (state) => {
-        state.status = 'rejected'
+        state.status = Status.rejected
       })
   },
 })

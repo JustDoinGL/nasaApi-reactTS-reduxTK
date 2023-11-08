@@ -13,7 +13,7 @@ import { CloseButton, Search } from '../../../assets/svg'
 
 import styles from './SearchHeader.module.css'
 
-const SearchHeader = () => {
+export const SearchHeader = () => {
 	const inputRef = useRef<HTMLInputElement>(null)
 	const dispatch = useAppDispatch()
 	const { valueInput, searchPV } = useAppSelector(getSearchSelector)
@@ -67,4 +67,3 @@ const SearchHeader = () => {
 	)
 }
 
-export { SearchHeader }

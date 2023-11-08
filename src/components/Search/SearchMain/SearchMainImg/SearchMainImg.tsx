@@ -7,7 +7,7 @@ import { Modal } from '../../../../UI'
 
 import styles from './SearchMainImg.module.css'
 
-const SearchMainImg = ({ el, description, item }: SearchMainImgProps) => {
+export const SearchMainImg = ({ el, description, item }: SearchMainImgProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const { ref, inView } = useInView({
 		threshold: 0.6,
@@ -32,4 +32,3 @@ const SearchMainImg = ({ el, description, item }: SearchMainImgProps) => {
 	)
 }
 
-export default SearchMainImg

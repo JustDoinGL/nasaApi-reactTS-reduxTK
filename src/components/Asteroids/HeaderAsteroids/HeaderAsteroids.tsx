@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 
 import styles from './HeaderAsteroids.module.css'
 
-const HeaderAsteroids = () => {
+export const HeaderAsteroids = () => {
 	const navigate = useNavigate()
 
 	return (
@@ -17,4 +17,4 @@ const HeaderAsteroids = () => {
 	)
 }
 
-export default HeaderAsteroids
+

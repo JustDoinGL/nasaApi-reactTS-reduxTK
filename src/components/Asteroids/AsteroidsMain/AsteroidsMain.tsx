@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 import { useInView } from 'react-intersection-observer'
 
-import getCurrentDate from '../../../actions/getCurrentDate'
+import {getCurrentDate} from '../../../actions/getCurrentDate'
 
 import { AsteroidsMainProps } from './AsteroidsMain.type'
 
@@ -13,16 +13,15 @@ import {
 } from '../../../redux/asteroids/asteroidsSlice'
 
 import { BtnUpArrow, LoadError } from '../../../UI'
-import Asteroid from './Asteroid/Asteroid'
+
+import { Asteroid } from '..'
 
 import styles from './AsteroidsMain.module.css'
 
-const AsteroidsMain = ({ inViewPage }: AsteroidsMainProps) => {
+export const AsteroidsMain = ({ inViewPage }: AsteroidsMainProps) => {
 	const dispatch = useAppDispatch()
-
 	const { status, arrAsteroids, data, countAsteroids } =
 		useAppSelector(getAsteroidsSelector)
-
 	const { ref, inView } = useInView()
 
 	useEffect(() => {
@@ -66,4 +65,3 @@ const AsteroidsMain = ({ inViewPage }: AsteroidsMainProps) => {
 	)
 }
 
-export default AsteroidsMain

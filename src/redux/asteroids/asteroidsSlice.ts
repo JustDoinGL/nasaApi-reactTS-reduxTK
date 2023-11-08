@@ -3,6 +3,7 @@ import axios from 'axios'
 import { utils } from '../../utils'
 import { IAsteroidsDate } from '../../interface/asteroids'
 import { RootState } from '../store'
+import { Status } from '../@types/enum'
 
 const { api } = utils
 
@@ -27,7 +28,7 @@ export const fetchAsteroids = createAsyncThunk<IAsteroidsDate[], string>(
 
 type AsteroidsState = {
   asteroid: IAsteroidsDate[]
-  status: 'pending' | 'fulfilled' | 'rejected'
+  status: Status
   arrAsteroids: IAsteroidsDate[]
   countAsteroids: number
   activeAsteroids: IAsteroidsDate[]
@@ -37,7 +38,7 @@ type AsteroidsState = {
 
 const initialState: AsteroidsState = {
   asteroid: getAsteroidFromLocalStorage(),
-  status: 'pending',
+  status: Status.pending,
   arrAsteroids: [],
   countAsteroids: 0,
   activeAsteroids: [],
@@ -80,14 +81,14 @@ export const asteroidsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchAsteroids.pending, (state) => {
-        state.status = 'pending'
+        state.status = Status.pending
       })
       .addCase(fetchAsteroids.fulfilled, (state, action) => {
         state.arrAsteroids = [...state.arrAsteroids, ...action.payload]
-        state.status = 'fulfilled'
+        state.status = Status.fulfilled
       })
       .addCase(fetchAsteroids.rejected, (state) => {
-        state.status = 'rejected'
+        state.status = Status.rejected
       })
   },
 })

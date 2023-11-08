@@ -8,7 +8,7 @@ import { RenderMedia } from '../../../UI'
 
 import styles from './PictureSmall.module.css'
 
-const PictureSmall = ({ picture }: PicturesSmallProps) => {
+export const PictureSmall = ({ picture }: PicturesSmallProps) => {
 	const dispatch = useAppDispatch()
 	const { picturesArr } = useAppSelector(getPicturesSelector)
 
@@ -25,4 +25,3 @@ const PictureSmall = ({ picture }: PicturesSmallProps) => {
 	)
 }
 
-export default PictureSmall

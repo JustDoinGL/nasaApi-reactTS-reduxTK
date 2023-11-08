@@ -46,4 +46,4 @@ const Search = () => {
 	)
 }
 
-export { Search }
+export default Search 

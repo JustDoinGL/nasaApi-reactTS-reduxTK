@@ -5,6 +5,8 @@ import { Outlet } from 'react-router-dom'
 import { Footer, Header } from '../../components'
 
 import styles from './SearchLayout.module.css'
+import { Suspense } from 'react'
+import { Loader } from '../../UI'
 
 const SearchLayout = () => {
 	const { objHeader } = useAppSelector(state => state.header)
@@ -13,11 +15,13 @@ const SearchLayout = () => {
 		<div className={styles.container}>
 			<Header data={objHeader} />
 			<main className={styles.content}>
-				<Outlet />
+				<Suspense fallback={<Loader />}>
+					<Outlet />
+				</Suspense>
 			</main>
 			<Footer />
 		</div>
 	)
 }
 
-export { SearchLayout }
+export default SearchLayout

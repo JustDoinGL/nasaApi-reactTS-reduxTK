@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 
 import { fetchPictures, getPicturesSelector } from '../../redux/pictures/picturesSlice'
 
-import { PictureSmall } from '../../components/Pictures'
-import PicturesBig from '../../components/Pictures/PicturesBig/PicturesBig'
+import { PictureSmall, PicturesBig } from '../../components/Pictures'
+
 import { LoadError, Modal } from '../../UI'
 
 import styles from './PicturesPage.module.css'
@@ -42,4 +42,4 @@ const PicturesPage = () => {
 	)
 }
 
-export { PicturesPage }
+export default PicturesPage 

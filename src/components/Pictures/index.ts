@@ -1,4 +1,2 @@
-import PictureSmall from './PictureSmall/PictureSmall'
-import PicturesBig from './PicturesBig/PicturesBig'
-
-export { PictureSmall, PicturesBig }
+export * from './PicturesBig/PicturesBig'
+export * from './PictureSmall/PictureSmall'

@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { ISearchPictures, ISearch } from '../../interface/searchPictures'
 import { RootState } from '../store'
+import { Status } from '../@types/enum'
 
 export const fetchSearch = createAsyncThunk<ISearch, string[]>(
   'search/fetchSearch',
@@ -16,7 +17,7 @@ export const fetchSearch = createAsyncThunk<ISearch, string[]>(
 )
 
 type SearchState = {
-  status: 'pending' | 'fulfilled' | 'rejected'
+  status: Status
   valueInput: string
   items: ISearchPictures[]
   searchPV: string[]
@@ -25,7 +26,7 @@ type SearchState = {
 }
 
 const initialState: SearchState = {
-  status: 'fulfilled',
+  status: Status.fulfilled,
   valueInput: '',
   valueInputLast: '',
   items: [],
@@ -49,7 +50,7 @@ export const searchSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchSearch.pending, (state) => {
-        state.status = 'pending'
+        state.status = Status.pending
       })
       .addCase(fetchSearch.fulfilled, (state, action) => {
         state.items = action.payload.collection.items
@@ -57,11 +58,11 @@ export const searchSlice = createSlice({
         if (state.items.length > 0) {
           state.valueInput = ''
         }
-        state.status = 'fulfilled'
+        state.status = Status.fulfilled
         state.isLoad = true
       })
       .addCase(fetchSearch.rejected, (state) => {
-        state.status = 'rejected'
+        state.status = Status.rejected
       })
   },
 })

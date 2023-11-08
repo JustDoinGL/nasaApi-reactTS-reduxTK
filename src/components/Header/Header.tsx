@@ -6,7 +6,7 @@ import img from '../../assets/img/NASA_logo.png'
 
 import styles from './Header.module.css'
 
-const Header = ({ data }: HeaderProps) => {
+export const Header = ({ data }: HeaderProps) => {
 	return (
 		<header className={styles.container}>
 			<div className={styles.logo}>
@@ -35,5 +35,3 @@ const Header = ({ data }: HeaderProps) => {
 		</header>
 	)
 }
-
-export default Header

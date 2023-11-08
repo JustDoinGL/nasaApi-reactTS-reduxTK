@@ -6,7 +6,7 @@ import { AsteroidsHeaderProps } from './AsteroidsHeader.type'
 
 import styles from './AsteroidsHeader.module.css'
 
-const AsteroidsHeader = ({ title, refUseInViewPage }: AsteroidsHeaderProps) => {
+export const AsteroidsHeader = ({ title, refUseInViewPage }: AsteroidsHeaderProps) => {
 	const dispatch = useAppDispatch()
 	const { activeKilometers } = useAppSelector(getAsteroidsSelector)
 
@@ -36,4 +36,3 @@ const AsteroidsHeader = ({ title, refUseInViewPage }: AsteroidsHeaderProps) => {
 	)
 }
 
-export default AsteroidsHeader

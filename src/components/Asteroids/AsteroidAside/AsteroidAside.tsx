@@ -7,7 +7,7 @@ import { Button } from '../../../UI'
 
 import styles from './AsteroidAside.module.css'
 
-const AsteroidAside = () => {
+export const AsteroidAside = () => {
 	const { countAsteroids } = useAppSelector(getAsteroidsSelector)
 	const navigate = useNavigate()
 
@@ -33,4 +33,4 @@ const AsteroidAside = () => {
 	)
 }
 
-export default AsteroidAside
+

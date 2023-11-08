@@ -1,10 +1,10 @@
 import { SearchMainProps } from './SearchMain.type'
 
-import SearchMainImg from './SearchMainImg/SearchMainImg'
+import { SearchMainImg } from './SearchMainImg/SearchMainImg'
 
 import styles from './SearchMain.module.css'
 
-const SearchMain = ({ item }: SearchMainProps) => {
+export const SearchMain = ({ item }: SearchMainProps) => {
 	const { title, media_type } = item.data[0]
 
 	if (media_type === 'image') {
@@ -24,5 +24,3 @@ const SearchMain = ({ item }: SearchMainProps) => {
 		return null
 	}
 }
-
-export { SearchMain }

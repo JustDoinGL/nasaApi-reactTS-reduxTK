@@ -3,8 +3,8 @@ import { useAppSelector } from '../../../hooks/redux'
 
 import { getAsteroidsSelector } from '../../../redux/asteroids/asteroidsSlice'
 
-import { AsteroidsHeader } from '../../../components/Asteroids'
-import Asteroid from '../../../components/Asteroids/AsteroidsMain/Asteroid/Asteroid'
+import { Asteroid, AsteroidsHeader } from '../../../components/Asteroids'
+
 import { BtnUpArrow } from '../../../UI'
 
 import styles from './DestroysPage.module.css'
@@ -29,4 +29,4 @@ const DestroyPage = () => {
 	)
 }
 
-export { DestroyPage }
+export default DestroyPage 

@@ -15,7 +15,7 @@ import { DoubleArrow } from '../../../../../assets/svg/index'
 
 import styles from './AsteroidHeader.module.css'
 
-const AsteroidHeader = ({ asteroid }: AsteroidHeaderProps) => {
+export const AsteroidHeader = ({ asteroid }: AsteroidHeaderProps) => {
 	const { activeKilometers } = useAppSelector(getAsteroidsSelector)
 	return (
 		<>
@@ -41,4 +41,3 @@ const AsteroidHeader = ({ asteroid }: AsteroidHeaderProps) => {
 	)
 }
 
-export default AsteroidHeader

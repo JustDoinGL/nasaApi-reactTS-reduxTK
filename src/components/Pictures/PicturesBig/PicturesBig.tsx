@@ -13,7 +13,7 @@ import { RenderMedia } from '../../../UI'
 
 import styles from './PicturesBig.module.css'
 
-const PicturesBig = ({ picture, setIsOpen }: PicturesBigProps) => {
+export const PicturesBig = ({ picture, setIsOpen }: PicturesBigProps) => {
 	const dispatch = useAppDispatch()
 	const left = useKeyPress('ArrowLeft')
 	const right = useKeyPress('ArrowRight')
@@ -50,4 +50,3 @@ const PicturesBig = ({ picture, setIsOpen }: PicturesBigProps) => {
 	)
 }
 
-export default PicturesBig

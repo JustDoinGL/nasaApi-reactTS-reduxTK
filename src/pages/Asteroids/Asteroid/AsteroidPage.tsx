@@ -6,7 +6,7 @@ import { getAsteroid, getAsteroidsSelector } from '../../../redux/asteroids/aste
 
 import { Asteroid, AsteroidsHeader } from '../../../components/Asteroids'
 
-const AsteroidPage = () => {
+const AsteroidPage: React.FC = () => {
 	const { id } = useParams()
 	const dispatch = useAppDispatch()
 
@@ -27,4 +27,4 @@ const AsteroidPage = () => {
 	)
 }
 
-export { AsteroidPage }
+export default AsteroidPage 

@@ -1,6 +1,4 @@
-import AsteroidsHeader from './AsteroidsHeader/AsteroidsHeader'
-import AsteroidsMain from './AsteroidsMain/AsteroidsMain'
-import AsteroidAside from './AsteroidAside/AsteroidAside'
-import Asteroid from './AsteroidsMain/Asteroid/Asteroid'
-
-export { AsteroidsHeader, AsteroidsMain, Asteroid, AsteroidAside }
+export * from './AsteroidsHeader/AsteroidsHeader'
+export * from './AsteroidsMain/AsteroidsMain'
+export * from './AsteroidAside/AsteroidAside'
+export * from './AsteroidsMain/Asteroid/Asteroid'
